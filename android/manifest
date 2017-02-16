@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 3
+architectures: armeabi-v7a x86
+description: ti.material
+author: Ani Sinanaj
+license: Specify your license
+copyright: Copyright (c) 2017 by Caffeina
+
+# these should not be edited
+name: ti.material
+moduleid: ti.material
+guid: e8750b5f-d1cf-4c47-bd1d-8406a3b2e929
+platform: android
+minsdk: 6.0.0

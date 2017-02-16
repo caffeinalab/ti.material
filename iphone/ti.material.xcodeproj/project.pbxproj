@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24416B8111C4CA220047AFDD /* Build & Test */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */;
+			buildPhases = (
+				24416B8011C4CA220047AFDD /* ShellScript */,
+			);
+			dependencies = (
+				24416B8511C4CA280047AFDD /* PBXTargetDependency */,
+			);
+			name = "Build & Test";
+			productName = "Build & test";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		24DD6CF91134B3F500162E58 /* TiMaterialModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* TiMaterialModule.h */; };
+		24DD6CFA1134B3F500162E58 /* TiMaterialModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* TiMaterialModule.m */; };
+		24DE9E1111C5FE74003F90F6 /* TiMaterialModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* TiMaterialModuleAssets.h */; };
+		24DE9E1211C5FE74003F90F6 /* TiMaterialModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* TiMaterialModuleAssets.m */; };
+		556ABC8F1E5603C3009FFB61 /* TiMaterialButtonProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABC831E5603C3009FFB61 /* TiMaterialButtonProxy.h */; };
+		556ABC901E5603C3009FFB61 /* TiMaterialButtonProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABC841E5603C3009FFB61 /* TiMaterialButtonProxy.m */; };
+		556ABC911E5603C3009FFB61 /* TiMaterialDatepickerProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABC851E5603C3009FFB61 /* TiMaterialDatepickerProxy.h */; };
+		556ABC921E5603C3009FFB61 /* TiMaterialDatepickerProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABC861E5603C3009FFB61 /* TiMaterialDatepickerProxy.m */; };
+		556ABC931E5603C3009FFB61 /* TiMaterialTabbarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABC871E5603C3009FFB61 /* TiMaterialTabbarView.h */; };
+		556ABC941E5603C3009FFB61 /* TiMaterialTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABC881E5603C3009FFB61 /* TiMaterialTabbarView.m */; };
+		556ABC951E5603C3009FFB61 /* TiMaterialTabbarViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABC891E5603C3009FFB61 /* TiMaterialTabbarViewProxy.h */; };
+		556ABC961E5603C3009FFB61 /* TiMaterialTabbarViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABC8A1E5603C3009FFB61 /* TiMaterialTabbarViewProxy.m */; };
+		556ABC971E5603C3009FFB61 /* TiMaterialTimeProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABC8B1E5603C3009FFB61 /* TiMaterialTimeProxy.h */; };
+		556ABC981E5603C3009FFB61 /* TiMaterialTimeProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABC8C1E5603C3009FFB61 /* TiMaterialTimeProxy.m */; };
+		556ABC991E5603C3009FFB61 /* TiMaterialToastProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABC8D1E5603C3009FFB61 /* TiMaterialToastProxy.h */; };
+		556ABC9A1E5603C3009FFB61 /* TiMaterialToastProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABC8E1E5603C3009FFB61 /* TiMaterialToastProxy.m */; };
+		556ABCC81E5603EE009FFB61 /* libMaterialControls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 556ABCC71E5603EE009FFB61 /* libMaterialControls.a */; };
+		556ABCCB1E560A55009FFB61 /* TiMaterialButtonViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABCC91E560A55009FFB61 /* TiMaterialButtonViewProxy.h */; };
+		556ABCCC1E560A55009FFB61 /* TiMaterialButtonViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABCCA1E560A55009FFB61 /* TiMaterialButtonViewProxy.m */; };
+		556ABCCF1E560A7C009FFB61 /* TiMaterialButtonView.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABCCD1E560A7C009FFB61 /* TiMaterialButtonView.h */; };
+		556ABCD01E560A7C009FFB61 /* TiMaterialButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABCCE1E560A7C009FFB61 /* TiMaterialButtonView.m */; };
+		AA747D9F0F9514B9006C5449 /* TiMaterial_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiMaterial_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24416B8411C4CA280047AFDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = ti.material;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24DD6CF71134B3F500162E58 /* TiMaterialModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialModule.h; path = Classes/TiMaterialModule.h; sourceTree = "<group>"; };
+		24DD6CF81134B3F500162E58 /* TiMaterialModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialModule.m; path = Classes/TiMaterialModule.m; sourceTree = "<group>"; };
+		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
+		24DE9E0F11C5FE74003F90F6 /* TiMaterialModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialModuleAssets.h; path = Classes/TiMaterialModuleAssets.h; sourceTree = "<group>"; };
+		24DE9E1011C5FE74003F90F6 /* TiMaterialModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialModuleAssets.m; path = Classes/TiMaterialModuleAssets.m; sourceTree = "<group>"; };
+		556ABC831E5603C3009FFB61 /* TiMaterialButtonProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialButtonProxy.h; path = Classes/TiMaterialButtonProxy.h; sourceTree = "<group>"; };
+		556ABC841E5603C3009FFB61 /* TiMaterialButtonProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialButtonProxy.m; path = Classes/TiMaterialButtonProxy.m; sourceTree = "<group>"; };
+		556ABC851E5603C3009FFB61 /* TiMaterialDatepickerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialDatepickerProxy.h; path = Classes/TiMaterialDatepickerProxy.h; sourceTree = "<group>"; };
+		556ABC861E5603C3009FFB61 /* TiMaterialDatepickerProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialDatepickerProxy.m; path = Classes/TiMaterialDatepickerProxy.m; sourceTree = "<group>"; };
+		556ABC871E5603C3009FFB61 /* TiMaterialTabbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialTabbarView.h; path = Classes/TiMaterialTabbarView.h; sourceTree = "<group>"; };
+		556ABC881E5603C3009FFB61 /* TiMaterialTabbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialTabbarView.m; path = Classes/TiMaterialTabbarView.m; sourceTree = "<group>"; };
+		556ABC891E5603C3009FFB61 /* TiMaterialTabbarViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialTabbarViewProxy.h; path = Classes/TiMaterialTabbarViewProxy.h; sourceTree = "<group>"; };
+		556ABC8A1E5603C3009FFB61 /* TiMaterialTabbarViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialTabbarViewProxy.m; path = Classes/TiMaterialTabbarViewProxy.m; sourceTree = "<group>"; };
+		556ABC8B1E5603C3009FFB61 /* TiMaterialTimeProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialTimeProxy.h; path = Classes/TiMaterialTimeProxy.h; sourceTree = "<group>"; };
+		556ABC8C1E5603C3009FFB61 /* TiMaterialTimeProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialTimeProxy.m; path = Classes/TiMaterialTimeProxy.m; sourceTree = "<group>"; };
+		556ABC8D1E5603C3009FFB61 /* TiMaterialToastProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialToastProxy.h; path = Classes/TiMaterialToastProxy.h; sourceTree = "<group>"; };
+		556ABC8E1E5603C3009FFB61 /* TiMaterialToastProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialToastProxy.m; path = Classes/TiMaterialToastProxy.m; sourceTree = "<group>"; };
+		556ABC9C1E5603D4009FFB61 /* AutoResizeTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoResizeTextView.h; sourceTree = "<group>"; };
+		556ABC9D1E5603D4009FFB61 /* MaterialControls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaterialControls.h; sourceTree = "<group>"; };
+		556ABC9E1E5603D4009FFB61 /* MDBubbleLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDBubbleLabel.h; sourceTree = "<group>"; };
+		556ABC9F1E5603D4009FFB61 /* MDButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDButton.h; sourceTree = "<group>"; };
+		556ABCA01E5603D4009FFB61 /* MDCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCalendar.h; sourceTree = "<group>"; };
+		556ABCA11E5603D4009FFB61 /* MDCalendarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCalendarCell.h; sourceTree = "<group>"; };
+		556ABCA21E5603D4009FFB61 /* MDCalendarDateHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCalendarDateHeader.h; sourceTree = "<group>"; };
+		556ABCA31E5603D4009FFB61 /* MDCalendarHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCalendarHeader.h; sourceTree = "<group>"; };
+		556ABCA41E5603D4009FFB61 /* MDCalendarYearSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCalendarYearSelector.h; sourceTree = "<group>"; };
+		556ABCA51E5603D4009FFB61 /* MDCalendarYearSelectorViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCalendarYearSelectorViewCell.h; sourceTree = "<group>"; };
+		556ABCA61E5603D4009FFB61 /* MDCircularProgressLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCircularProgressLayer.h; sourceTree = "<group>"; };
+		556ABCA71E5603D4009FFB61 /* MDCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCollectionViewCell.h; sourceTree = "<group>"; };
+		556ABCA81E5603D4009FFB61 /* MDConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDConstants.h; sourceTree = "<group>"; };
+		556ABCA91E5603D4009FFB61 /* MDDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDDatePicker.h; sourceTree = "<group>"; };
+		556ABCAA1E5603D4009FFB61 /* MDDatePickerDialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDDatePickerDialog.h; sourceTree = "<group>"; };
+		556ABCAB1E5603D4009FFB61 /* MDDeviceHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDDeviceHelper.h; sourceTree = "<group>"; };
+		556ABCAC1E5603D4009FFB61 /* MDLinearProgressLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDLinearProgressLayer.h; sourceTree = "<group>"; };
+		556ABCAD1E5603D4009FFB61 /* MDMathHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMathHelper.h; sourceTree = "<group>"; };
+		556ABCAE1E5603D4009FFB61 /* MDProgress.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDProgress.h; sourceTree = "<group>"; };
+		556ABCAF1E5603D4009FFB61 /* MDProgressLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDProgressLayer.h; sourceTree = "<group>"; };
+		556ABCB01E5603D4009FFB61 /* MDRippleLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDRippleLayer.h; sourceTree = "<group>"; };
+		556ABCB11E5603D4009FFB61 /* MDSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSlider.h; sourceTree = "<group>"; };
+		556ABCB21E5603D4009FFB61 /* MDSliderIcon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSliderIcon.h; sourceTree = "<group>"; };
+		556ABCB31E5603D4009FFB61 /* MDSliderThumbView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSliderThumbView.h; sourceTree = "<group>"; };
+		556ABCB41E5603D4009FFB61 /* MDSliderTickMarksView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSliderTickMarksView.h; sourceTree = "<group>"; };
+		556ABCB51E5603D4009FFB61 /* MDSnackbar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSnackbar.h; sourceTree = "<group>"; };
+		556ABCB61E5603D4009FFB61 /* MDSuggestPopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSuggestPopupView.h; sourceTree = "<group>"; };
+		556ABCB71E5603D4009FFB61 /* MDSuggestTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSuggestTableView.h; sourceTree = "<group>"; };
+		556ABCB81E5603D4009FFB61 /* MDSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDSwitch.h; sourceTree = "<group>"; };
+		556ABCB91E5603D4009FFB61 /* MDTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTabBar.h; sourceTree = "<group>"; };
+		556ABCBA1E5603D4009FFB61 /* MDTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTabBarViewController.h; sourceTree = "<group>"; };
+		556ABCBB1E5603D4009FFB61 /* MDTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTableViewCell.h; sourceTree = "<group>"; };
+		556ABCBC1E5603D4009FFB61 /* MDTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTextField.h; sourceTree = "<group>"; };
+		556ABCBD1E5603D4009FFB61 /* MDTimePickerDialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTimePickerDialog.h; sourceTree = "<group>"; };
+		556ABCBE1E5603D4009FFB61 /* MDToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDToast.h; sourceTree = "<group>"; };
+		556ABCBF1E5603D4009FFB61 /* MDTouchGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDTouchGestureRecognizer.h; sourceTree = "<group>"; };
+		556ABCC01E5603D4009FFB61 /* NSCalendarHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCalendarHelper.h; sourceTree = "<group>"; };
+		556ABCC11E5603D4009FFB61 /* NSDate+MDExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+MDExtension.h"; sourceTree = "<group>"; };
+		556ABCC21E5603D4009FFB61 /* NSDateHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDateHelper.h; sourceTree = "<group>"; };
+		556ABCC31E5603D4009FFB61 /* UIColorHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIColorHelper.h; sourceTree = "<group>"; };
+		556ABCC41E5603D4009FFB61 /* UIFontHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFontHelper.h; sourceTree = "<group>"; };
+		556ABCC51E5603D4009FFB61 /* UIView+MDExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MDExtension.h"; sourceTree = "<group>"; };
+		556ABCC61E5603D4009FFB61 /* UIViewHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewHelper.h; sourceTree = "<group>"; };
+		556ABCC71E5603EE009FFB61 /* libMaterialControls.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMaterialControls.a; path = Frameworks/libMaterialControls.a; sourceTree = "<group>"; };
+		556ABCC91E560A55009FFB61 /* TiMaterialButtonViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialButtonViewProxy.h; path = Classes/TiMaterialButtonViewProxy.h; sourceTree = "<group>"; };
+		556ABCCA1E560A55009FFB61 /* TiMaterialButtonViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialButtonViewProxy.m; path = Classes/TiMaterialButtonViewProxy.m; sourceTree = "<group>"; };
+		556ABCCD1E560A7C009FFB61 /* TiMaterialButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialButtonView.h; path = Classes/TiMaterialButtonView.h; sourceTree = "<group>"; };
+		556ABCCE1E560A7C009FFB61 /* TiMaterialButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialButtonView.m; path = Classes/TiMaterialButtonView.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* TiMaterial_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiMaterial_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libti.material.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libti.material.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				556ABCC81E5603EE009FFB61 /* libMaterialControls.a in Frameworks */,
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libti.material.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* ti.material */ = {
+			isa = PBXGroup;
+			children = (
+				556ABC9B1E5603D4009FFB61 /* headers */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = ti.material;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				556ABCC71E5603EE009FFB61 /* libMaterialControls.a */,
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				556ABC831E5603C3009FFB61 /* TiMaterialButtonProxy.h */,
+				556ABC841E5603C3009FFB61 /* TiMaterialButtonProxy.m */,
+				556ABC851E5603C3009FFB61 /* TiMaterialDatepickerProxy.h */,
+				556ABC861E5603C3009FFB61 /* TiMaterialDatepickerProxy.m */,
+				556ABC871E5603C3009FFB61 /* TiMaterialTabbarView.h */,
+				556ABC881E5603C3009FFB61 /* TiMaterialTabbarView.m */,
+				556ABC891E5603C3009FFB61 /* TiMaterialTabbarViewProxy.h */,
+				556ABC8A1E5603C3009FFB61 /* TiMaterialTabbarViewProxy.m */,
+				556ABC8B1E5603C3009FFB61 /* TiMaterialTimeProxy.h */,
+				556ABC8C1E5603C3009FFB61 /* TiMaterialTimeProxy.m */,
+				556ABC8D1E5603C3009FFB61 /* TiMaterialToastProxy.h */,
+				556ABC8E1E5603C3009FFB61 /* TiMaterialToastProxy.m */,
+				24DE9E0F11C5FE74003F90F6 /* TiMaterialModuleAssets.h */,
+				24DE9E1011C5FE74003F90F6 /* TiMaterialModuleAssets.m */,
+				24DD6CF71134B3F500162E58 /* TiMaterialModule.h */,
+				24DD6CF81134B3F500162E58 /* TiMaterialModule.m */,
+				556ABCC91E560A55009FFB61 /* TiMaterialButtonViewProxy.h */,
+				556ABCCA1E560A55009FFB61 /* TiMaterialButtonViewProxy.m */,
+				556ABCCD1E560A7C009FFB61 /* TiMaterialButtonView.h */,
+				556ABCCE1E560A7C009FFB61 /* TiMaterialButtonView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* TiMaterial_Prefix.pch */,
+				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		556ABC9B1E5603D4009FFB61 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				556ABC9C1E5603D4009FFB61 /* AutoResizeTextView.h */,
+				556ABC9D1E5603D4009FFB61 /* MaterialControls.h */,
+				556ABC9E1E5603D4009FFB61 /* MDBubbleLabel.h */,
+				556ABC9F1E5603D4009FFB61 /* MDButton.h */,
+				556ABCA01E5603D4009FFB61 /* MDCalendar.h */,
+				556ABCA11E5603D4009FFB61 /* MDCalendarCell.h */,
+				556ABCA21E5603D4009FFB61 /* MDCalendarDateHeader.h */,
+				556ABCA31E5603D4009FFB61 /* MDCalendarHeader.h */,
+				556ABCA41E5603D4009FFB61 /* MDCalendarYearSelector.h */,
+				556ABCA51E5603D4009FFB61 /* MDCalendarYearSelectorViewCell.h */,
+				556ABCA61E5603D4009FFB61 /* MDCircularProgressLayer.h */,
+				556ABCA71E5603D4009FFB61 /* MDCollectionViewCell.h */,
+				556ABCA81E5603D4009FFB61 /* MDConstants.h */,
+				556ABCA91E5603D4009FFB61 /* MDDatePicker.h */,
+				556ABCAA1E5603D4009FFB61 /* MDDatePickerDialog.h */,
+				556ABCAB1E5603D4009FFB61 /* MDDeviceHelper.h */,
+				556ABCAC1E5603D4009FFB61 /* MDLinearProgressLayer.h */,
+				556ABCAD1E5603D4009FFB61 /* MDMathHelper.h */,
+				556ABCAE1E5603D4009FFB61 /* MDProgress.h */,
+				556ABCAF1E5603D4009FFB61 /* MDProgressLayer.h */,
+				556ABCB01E5603D4009FFB61 /* MDRippleLayer.h */,
+				556ABCB11E5603D4009FFB61 /* MDSlider.h */,
+				556ABCB21E5603D4009FFB61 /* MDSliderIcon.h */,
+				556ABCB31E5603D4009FFB61 /* MDSliderThumbView.h */,
+				556ABCB41E5603D4009FFB61 /* MDSliderTickMarksView.h */,
+				556ABCB51E5603D4009FFB61 /* MDSnackbar.h */,
+				556ABCB61E5603D4009FFB61 /* MDSuggestPopupView.h */,
+				556ABCB71E5603D4009FFB61 /* MDSuggestTableView.h */,
+				556ABCB81E5603D4009FFB61 /* MDSwitch.h */,
+				556ABCB91E5603D4009FFB61 /* MDTabBar.h */,
+				556ABCBA1E5603D4009FFB61 /* MDTabBarViewController.h */,
+				556ABCBB1E5603D4009FFB61 /* MDTableViewCell.h */,
+				556ABCBC1E5603D4009FFB61 /* MDTextField.h */,
+				556ABCBD1E5603D4009FFB61 /* MDTimePickerDialog.h */,
+				556ABCBE1E5603D4009FFB61 /* MDToast.h */,
+				556ABCBF1E5603D4009FFB61 /* MDTouchGestureRecognizer.h */,
+				556ABCC01E5603D4009FFB61 /* NSCalendarHelper.h */,
+				556ABCC11E5603D4009FFB61 /* NSDate+MDExtension.h */,
+				556ABCC21E5603D4009FFB61 /* NSDateHelper.h */,
+				556ABCC31E5603D4009FFB61 /* UIColorHelper.h */,
+				556ABCC41E5603D4009FFB61 /* UIFontHelper.h */,
+				556ABCC51E5603D4009FFB61 /* UIView+MDExtension.h */,
+				556ABCC61E5603D4009FFB61 /* UIViewHelper.h */,
+			);
+			path = headers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				556ABC971E5603C3009FFB61 /* TiMaterialTimeProxy.h in Headers */,
+				556ABC911E5603C3009FFB61 /* TiMaterialDatepickerProxy.h in Headers */,
+				AA747D9F0F9514B9006C5449 /* TiMaterial_Prefix.pch in Headers */,
+				24DD6CF91134B3F500162E58 /* TiMaterialModule.h in Headers */,
+				556ABCCF1E560A7C009FFB61 /* TiMaterialButtonView.h in Headers */,
+				24DE9E1111C5FE74003F90F6 /* TiMaterialModuleAssets.h in Headers */,
+				556ABC8F1E5603C3009FFB61 /* TiMaterialButtonProxy.h in Headers */,
+				556ABCCB1E560A55009FFB61 /* TiMaterialButtonViewProxy.h in Headers */,
+				556ABC951E5603C3009FFB61 /* TiMaterialTabbarViewProxy.h in Headers */,
+				556ABC991E5603C3009FFB61 /* TiMaterialToastProxy.h in Headers */,
+				556ABC931E5603C3009FFB61 /* TiMaterialTabbarView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* ti.material */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "ti.material" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ti.material;
+			productName = ti.material;
+			productReference = D2AAC07E0554694100DB518D /* libti.material.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+			};
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ti.material" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* ti.material */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* ti.material */,
+				24416B8111C4CA220047AFDD /* Build & Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24416B8011C4CA220047AFDD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				556ABCD01E560A7C009FFB61 /* TiMaterialButtonView.m in Sources */,
+				556ABC981E5603C3009FFB61 /* TiMaterialTimeProxy.m in Sources */,
+				556ABC921E5603C3009FFB61 /* TiMaterialDatepickerProxy.m in Sources */,
+				556ABCCC1E560A55009FFB61 /* TiMaterialButtonViewProxy.m in Sources */,
+				556ABC9A1E5603C3009FFB61 /* TiMaterialToastProxy.m in Sources */,
+				24DD6CFA1134B3F500162E58 /* TiMaterialModule.m in Sources */,
+				556ABC901E5603C3009FFB61 /* TiMaterialButtonProxy.m in Sources */,
+				556ABC961E5603C3009FFB61 /* TiMaterialTabbarViewProxy.m in Sources */,
+				24DE9E1211C5FE74003F90F6 /* TiMaterialModuleAssets.m in Sources */,
+				556ABC941E5603C3009FFB61 /* TiMaterialTabbarView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24416B8511C4CA280047AFDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* ti.material */;
+			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/TiMaterial.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMaterial_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ti.material;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				TITANIUM_SDK = "/Users/ani.sinanaj/Library/Application Support/Titanium/mobilesdk/osx/$(TITANIUM_SDK_VERSION)";
+				TITANIUM_SDK_VERSION = 6.0.0.GA;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/TiMaterial.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMaterial_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ti.material;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				TITANIUM_SDK = "/Users/ani.sinanaj/Library/Application Support/Titanium/mobilesdk/osx/$(TITANIUM_SDK_VERSION)";
+				TITANIUM_SDK_VERSION = 6.0.0.GA;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/TiMaterial.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMaterial_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ti.material;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LIBRARY = "libstdc++";
+				DSTROOT = /tmp/TiMaterial.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiMaterial_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ti.material;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		24416B8211C4CA220047AFDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & test";
+			};
+			name = Debug;
+		};
+		24416B8311C4CA220047AFDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build & test";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "ti.material" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ti.material" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24416B8211C4CA220047AFDD /* Debug */,
+				24416B8311C4CA220047AFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
