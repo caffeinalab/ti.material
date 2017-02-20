@@ -1,6 +1,7 @@
 dependencies: \
   /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/Classes/TiMaterialButtonProxy.m \
   /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/Classes/TiMaterialButtonProxy.h \
+  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiViewProxy.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiProxy.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiEvaluator.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/KrollContext.h \
@@ -21,16 +22,19 @@ dependencies: \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/defines.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiThreading.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiPublicAPI.h \
-  /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/headers/MDButton.h \
-  /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/headers/MDTimePickerDialog.h \
-  /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/headers/NSDate+MDExtension.h \
-  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiUtils.h \
+  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiUIView.h \
+  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiAnimation.h \
+  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiPoint.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiDimension.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiColor.h \
+  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/ListenerEntry.h \
+  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiModule.h \
+  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiUtils.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/WebFont.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiFile.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiBuffer.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiBlob.h \
-  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/KrollBridge.h \
-  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/Bridge.h \
-  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiModule.h
+  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/LayoutConstraint.h \
+  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiGradient.h \
+  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiRect.h \
+  /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiViewTemplate.h
