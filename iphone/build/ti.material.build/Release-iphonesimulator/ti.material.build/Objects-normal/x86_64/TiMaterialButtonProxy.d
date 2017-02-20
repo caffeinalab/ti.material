@@ -21,6 +21,7 @@ dependencies: \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/defines.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiThreading.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiPublicAPI.h \
+  /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/headers/MDButton.h \
   /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/headers/MDTimePickerDialog.h \
   /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/headers/NSDate+MDExtension.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiUtils.h \

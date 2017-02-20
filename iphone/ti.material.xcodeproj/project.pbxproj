@@ -26,8 +26,6 @@
 		24DD6CFA1134B3F500162E58 /* TiMaterialModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* TiMaterialModule.m */; };
 		24DE9E1111C5FE74003F90F6 /* TiMaterialModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* TiMaterialModuleAssets.h */; };
 		24DE9E1211C5FE74003F90F6 /* TiMaterialModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* TiMaterialModuleAssets.m */; };
-		556ABC8F1E5603C3009FFB61 /* TiMaterialButtonProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABC831E5603C3009FFB61 /* TiMaterialButtonProxy.h */; };
-		556ABC901E5603C3009FFB61 /* TiMaterialButtonProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABC841E5603C3009FFB61 /* TiMaterialButtonProxy.m */; };
 		556ABC911E5603C3009FFB61 /* TiMaterialDatepickerProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABC851E5603C3009FFB61 /* TiMaterialDatepickerProxy.h */; };
 		556ABC921E5603C3009FFB61 /* TiMaterialDatepickerProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABC861E5603C3009FFB61 /* TiMaterialDatepickerProxy.m */; };
 		556ABC931E5603C3009FFB61 /* TiMaterialTabbarView.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABC871E5603C3009FFB61 /* TiMaterialTabbarView.h */; };
@@ -63,8 +61,6 @@
 		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
 		24DE9E0F11C5FE74003F90F6 /* TiMaterialModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialModuleAssets.h; path = Classes/TiMaterialModuleAssets.h; sourceTree = "<group>"; };
 		24DE9E1011C5FE74003F90F6 /* TiMaterialModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialModuleAssets.m; path = Classes/TiMaterialModuleAssets.m; sourceTree = "<group>"; };
-		556ABC831E5603C3009FFB61 /* TiMaterialButtonProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialButtonProxy.h; path = Classes/TiMaterialButtonProxy.h; sourceTree = "<group>"; };
-		556ABC841E5603C3009FFB61 /* TiMaterialButtonProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialButtonProxy.m; path = Classes/TiMaterialButtonProxy.m; sourceTree = "<group>"; };
 		556ABC851E5603C3009FFB61 /* TiMaterialDatepickerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialDatepickerProxy.h; path = Classes/TiMaterialDatepickerProxy.h; sourceTree = "<group>"; };
 		556ABC861E5603C3009FFB61 /* TiMaterialDatepickerProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialDatepickerProxy.m; path = Classes/TiMaterialDatepickerProxy.m; sourceTree = "<group>"; };
 		556ABC871E5603C3009FFB61 /* TiMaterialTabbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialTabbarView.h; path = Classes/TiMaterialTabbarView.h; sourceTree = "<group>"; };
@@ -173,8 +169,6 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				556ABC831E5603C3009FFB61 /* TiMaterialButtonProxy.h */,
-				556ABC841E5603C3009FFB61 /* TiMaterialButtonProxy.m */,
 				556ABC851E5603C3009FFB61 /* TiMaterialDatepickerProxy.h */,
 				556ABC861E5603C3009FFB61 /* TiMaterialDatepickerProxy.m */,
 				556ABC871E5603C3009FFB61 /* TiMaterialTabbarView.h */,
@@ -269,7 +263,6 @@
 				24DD6CF91134B3F500162E58 /* TiMaterialModule.h in Headers */,
 				556ABCCF1E560A7C009FFB61 /* TiMaterialButtonView.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* TiMaterialModuleAssets.h in Headers */,
-				556ABC8F1E5603C3009FFB61 /* TiMaterialButtonProxy.h in Headers */,
 				556ABCCB1E560A55009FFB61 /* TiMaterialButtonViewProxy.h in Headers */,
 				556ABC951E5603C3009FFB61 /* TiMaterialTabbarViewProxy.h in Headers */,
 				556ABC991E5603C3009FFB61 /* TiMaterialToastProxy.h in Headers */,
@@ -353,7 +346,6 @@
 				556ABCCC1E560A55009FFB61 /* TiMaterialButtonViewProxy.m in Sources */,
 				556ABC9A1E5603C3009FFB61 /* TiMaterialToastProxy.m in Sources */,
 				24DD6CFA1134B3F500162E58 /* TiMaterialModule.m in Sources */,
-				556ABC901E5603C3009FFB61 /* TiMaterialButtonProxy.m in Sources */,
 				556ABC961E5603C3009FFB61 /* TiMaterialTabbarViewProxy.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* TiMaterialModuleAssets.m in Sources */,
 				556ABC941E5603C3009FFB61 /* TiMaterialTabbarView.m in Sources */,
@@ -394,7 +386,7 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -437,7 +429,7 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",

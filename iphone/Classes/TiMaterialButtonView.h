@@ -11,7 +11,12 @@
 #import <UIKit/UIKit.h>
 
 @interface TiMaterialButtonView : TiUIView {
-    @private UIView *square;
-    @private MDButton *b;
+    @private
+        MDButton *button;
+        int style;
+        BOOL touchStarted;
 }
+
+-(MDButton*)button;
+
 @end

@@ -9,35 +9,38 @@
 #import "TiMaterialButtonView.h"
 #import "MDButton.h"
 
-@implementation TiMaterialButtonView
--(void)dealloc
-{
-    NSLog(@"[VIEW LIFECYCLE EVENT] dealloc");
-    
-    // Release objects and memory allocated by the view
-    
-    [super dealloc];
-}
+@interface TiMaterialButtonView () <MDButtonDelegate>
 
--(void)willMoveToSuperview:(UIView *)newSuperview
-{
-    NSLog(@"[VIEW LIFECYCLE EVENT] willMoveToSuperview");
-}
+@end
+
+@implementation TiMaterialButtonView
+
 
 -(void)initializeState
 {
     // This method is called right after allocating the view and
     // is useful for initializing anything specific to the view
-    [self addSubview:square];
+    //[self button];
+    button = [[MDButton alloc] initWithFrame:self.frame];
+    [self addSubview:button];
     
-    b = [[MDButton alloc] init];
+    [self setBackgroundColor:[UIColor clearColor]];
+    button.mdButtonDelegate = self;
     
-    [square addSubview:b];
-    [self addSubview:square];
     [super initializeState];
-    
-    
-    NSLog(@"[VIEW LIFECYCLE EVENT] initializeState");
+}
+
+-(void)dealloc
+{
+    // Release objects and memory allocated by the view
+    RELEASE_TO_NIL(button);
+    [super dealloc];
+}
+
+-(void)willMoveToSuperview:(UIView *)newSuperview
+{
+    [self setBackgroundColor: [UIColor clearColor]];
+    [self button];
 }
 
 -(void)configurationSet
@@ -48,48 +51,32 @@
     // to implement the dependent functionality.
     
     [super configurationSet];
-    
-    NSLog(@"[VIEW LIFECYCLE EVENT] configurationSet");
 }
 
--(UIView*)square
+-(MDButton*)button
 {
-    // Return the square view. If this is the first time then allocate and
-    // initialize it.
-//    tabBarViewController = [[MDTabBarViewController alloc] initWithDelegate:self];
-//    square = tabBarViewController.view;
+    BOOL hasImage = [self.proxy valueForKey:@"backgroundImage"]!=nil;
+    MDButtonType defaultType = (hasImage==YES) ? MDButtonTypeRaised : MDButtonTypeFlat;
+    style = [TiUtils intValue:[self.proxy valueForKey:@"style"] def:defaultType];
     
-    if (square == nil) {
-        NSLog(@"[VIEW LIFECYCLE EVENT] square");
-        
-        [self addSubview:square];
-    }
+    TiColor *bg = [TiUtils colorValue:[self.proxy valueForKey:@"backgroundColor"]];
+    TiColor *ripple = [TiUtils colorValue:[self.proxy valueForKey:@"rippleColor"]];
+    TiColor *color = [TiUtils colorValue:[self.proxy valueForKey:@"color"]];
     
-    return square;
-}
-
--(void)notifyOfColorChange:(TiColor*)newColor
-{
-    NSLog(@"[VIEW LIFECYCLE EVENT] notifyOfColorChange");
+    [button setMdButtonType:style];
+    [button
+        setTitle:[TiUtils stringValue:[self.proxy valueForKey:@"title"]]
+        forState:UIControlStateNormal];
     
-    // The event listeners for a view are actually attached to the view proxy.
-    // You must reference 'self.proxy' to get the proxy for this view
+    [button setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    [button setBackgroundColor: [bg _color]];
+    [button setRippleColor: [ripple _color]];
+    [button setTitleColor:[color _color] forState:UIControlStateNormal];
     
-    // It is a good idea to check if there are listeners for the event that
-    // is about to fired. There could be zero or multiple listeners for the
-    // specified event.
-    if ([self.proxy _hasListeners:@"colorChange"]) {
-        NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
-                               newColor,@"color",
-                               nil
-                               ];
-        
-        [self.proxy fireEvent:@"colorChange" withObject:event];
-    }
-}
-
--(id)addViews:(id)args {
+    [button addTarget:self action:@selector(controlAction:forEvent:) forControlEvents:UIControlEventAllTouchEvents];
+    button.exclusiveTouch = YES;
     
+    return button;
 }
 
 -(void)frameSizeChanged:(CGRect)frame bounds:(CGRect)bounds
@@ -98,36 +85,70 @@
     // This method is called each time the frame / bounds / center changes
     // within Titanium.
     
-    NSLog(@"[VIEW LIFECYCLE EVENT] frameSizeChanged");
-		  
-    if (square != nil) {
-        
-        // You must call the special method 'setView:positionRect' against
-        // the TiUtils helper class. This method will correctly layout your
-        // child view within the correct layout boundaries of the new bounds
-        // of your view.
-        
-        [TiUtils setView:square positionRect:bounds];
+    [TiUtils setView:button positionRect:bounds];
+}
+
+- (void)controlAction:(id)sender forEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    NSString *fireEvent;
+    NSString * fireActionEvent = nil;
+    switch (touch.phase) {
+        case UITouchPhaseBegan:
+            if (touchStarted) {
+                return;
+            }
+            touchStarted = YES;
+            fireEvent = @"touchstart";
+            break;
+        case UITouchPhaseMoved:
+            fireEvent = @"touchmove";
+            break;
+        case UITouchPhaseEnded:
+            touchStarted = NO;
+            fireEvent = @"touchend";
+            if (button.highlighted) {
+                fireActionEvent = [touch tapCount] == 1 ? @"click" : ([touch tapCount] == 2 ? @"dblclick" : nil);
+            }
+            break;
+        case UITouchPhaseCancelled:
+            touchStarted = NO;
+            fireEvent = @"touchcancel";
+            break;
+        default:
+            return;
+    }
+    
+    //[self setHighlighting:button.highlighted];
+    NSMutableDictionary *evt = [NSMutableDictionary dictionaryWithDictionary:[TiUtils touchPropertiesToDictionary:touch andView:self]];
+    if ((fireActionEvent != nil) && [self.proxy _hasListeners:fireActionEvent]) {
+        [self.proxy fireEvent:fireActionEvent withObject:evt];
+    }
+    if ([self.proxy _hasListeners:fireEvent]) {
+        [self.proxy fireEvent:fireEvent withObject:evt];
     }
 }
 
--(void)setColor_:(id)color
-{
-    // This method is a property 'setter' for the 'color' property of the
-    // view. View property methods are named using a special, required
-    // convention (the underscore suffix).
+-(void)rotationStarted:(id)sender {
+    NSLog(@"Rotation started");
     
-    NSLog(@"[VIEW LIFECYCLE EVENT] Property Set: setColor_");
+    NSMutableDictionary *evt = nil;
     
-    // Use the TiUtils methods to get the values from the arguments
-    TiColor *newColor = [TiUtils colorValue:color];
-    UIColor *clr = [newColor _color];
-    UIView *sq = [self square];
-    sq.backgroundColor = clr;
+    NSString *fireEvent = @"rotationStarted";
+    if ([self.proxy _hasListeners:fireEvent]) {
+        [self.proxy fireEvent:fireEvent withObject:evt];
+    }
+}
+
+-(void)rotationCompleted:(id)sender{
+    NSLog(@"Rotation completed");
     
-    // Signal a property change notification to demonstrate the use
-    // of the proxy for the event listeners
-    [self notifyOfColorChange:newColor];
+    NSMutableDictionary *evt = nil;
+    
+    NSString *fireEvent = @"rotationCompleted";
+    if ([self.proxy _hasListeners:fireEvent]) {
+        [self.proxy fireEvent:fireEvent withObject:evt];
+    }
 }
 
 @end

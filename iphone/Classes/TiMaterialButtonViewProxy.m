@@ -85,6 +85,7 @@
     NSLog(@"[VIEWPROXY LIFECYCLE EVENT] _initWithProperties %@", properties);
     
     [super _initWithProperties:properties];
+    [super.view setBackgroundColor:[UIColor clearColor]];
 }
 
 -(void)viewWillAttach
