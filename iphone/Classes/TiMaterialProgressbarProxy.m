@@ -1,14 +1,14 @@
 //
-//  TiMaterialButtonViewProxy.m
+//  TiMaterialProgressbarProxy.m
 //  ti.material
 //
-//  Created by Ani Sinanaj on 16/02/2017.
+//  Created by Ani Sinanaj on 20/02/2017.
 //
 //
 
-#import "TiMaterialButtonProxy.h"
+#import "TiMaterialProgressbarProxy.h"
 
-@implementation TiMaterialButtonProxy
+@implementation TiMaterialProgressbarProxy
 -(id)init
 {
     // This is the designated initializer method and will always be called
@@ -71,7 +71,6 @@
     // at this point.
     
     [super _initWithProperties:properties];
-    [super.view setBackgroundColor:[UIColor clearColor]];
 }
 
 -(void)viewWillAttach
