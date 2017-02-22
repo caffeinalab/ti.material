@@ -36,7 +36,6 @@
 		556ABC981E5603C3009FFB61 /* TiMaterialTimeProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABC8C1E5603C3009FFB61 /* TiMaterialTimeProxy.m */; };
 		556ABC991E5603C3009FFB61 /* TiMaterialToastProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABC8D1E5603C3009FFB61 /* TiMaterialToastProxy.h */; };
 		556ABC9A1E5603C3009FFB61 /* TiMaterialToastProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABC8E1E5603C3009FFB61 /* TiMaterialToastProxy.m */; };
-		556ABCC81E5603EE009FFB61 /* libMaterialControls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 556ABCC71E5603EE009FFB61 /* libMaterialControls.a */; };
 		556ABCCB1E560A55009FFB61 /* TiMaterialButtonProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABCC91E560A55009FFB61 /* TiMaterialButtonProxy.h */; };
 		556ABCCC1E560A55009FFB61 /* TiMaterialButtonProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556ABCCA1E560A55009FFB61 /* TiMaterialButtonProxy.m */; };
 		556ABCCF1E560A7C009FFB61 /* TiMaterialButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 556ABCCD1E560A7C009FFB61 /* TiMaterialButton.h */; };
@@ -49,6 +48,7 @@
 		55C21CD41E5B5A77006C2D7A /* TiMaterialProgressbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C21CD21E5B5A77006C2D7A /* TiMaterialProgressbar.m */; };
 		55C21CD71E5B5A8D006C2D7A /* TiMaterialProgressbarProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 55C21CD51E5B5A8D006C2D7A /* TiMaterialProgressbarProxy.h */; };
 		55C21CD81E5B5A8D006C2D7A /* TiMaterialProgressbarProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C21CD61E5B5A8D006C2D7A /* TiMaterialProgressbarProxy.m */; };
+		55FE39DC1E5DD92500CAABFA /* libMaterialControls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55FE39DB1E5DD92500CAABFA /* libMaterialControls.a */; };
 		AA747D9F0F9514B9006C5449 /* TiMaterial_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiMaterial_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -122,7 +122,6 @@
 		556ABCC41E5603D4009FFB61 /* UIFontHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIFontHelper.h; sourceTree = "<group>"; };
 		556ABCC51E5603D4009FFB61 /* UIView+MDExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MDExtension.h"; sourceTree = "<group>"; };
 		556ABCC61E5603D4009FFB61 /* UIViewHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewHelper.h; sourceTree = "<group>"; };
-		556ABCC71E5603EE009FFB61 /* libMaterialControls.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMaterialControls.a; path = Frameworks/libMaterialControls.a; sourceTree = "<group>"; };
 		556ABCC91E560A55009FFB61 /* TiMaterialButtonProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialButtonProxy.h; path = Classes/TiMaterialButtonProxy.h; sourceTree = "<group>"; };
 		556ABCCA1E560A55009FFB61 /* TiMaterialButtonProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialButtonProxy.m; path = Classes/TiMaterialButtonProxy.m; sourceTree = "<group>"; };
 		556ABCCD1E560A7C009FFB61 /* TiMaterialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialButton.h; path = Classes/TiMaterialButton.h; sourceTree = "<group>"; };
@@ -135,6 +134,7 @@
 		55C21CD21E5B5A77006C2D7A /* TiMaterialProgressbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialProgressbar.m; path = Classes/TiMaterialProgressbar.m; sourceTree = "<group>"; };
 		55C21CD51E5B5A8D006C2D7A /* TiMaterialProgressbarProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiMaterialProgressbarProxy.h; path = Classes/TiMaterialProgressbarProxy.h; sourceTree = "<group>"; };
 		55C21CD61E5B5A8D006C2D7A /* TiMaterialProgressbarProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiMaterialProgressbarProxy.m; path = Classes/TiMaterialProgressbarProxy.m; sourceTree = "<group>"; };
+		55FE39DB1E5DD92500CAABFA /* libMaterialControls.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMaterialControls.a; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* TiMaterial_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiMaterial_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libti.material.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libti.material.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				556ABCC81E5603EE009FFB61 /* libMaterialControls.a in Frameworks */,
+				55FE39DC1E5DD92500CAABFA /* libMaterialControls.a in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,7 +176,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				556ABCC71E5603EE009FFB61 /* libMaterialControls.a */,
+				55FE39DB1E5DD92500CAABFA /* libMaterialControls.a */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
 			);
 			name = Frameworks;

@@ -144,15 +144,8 @@
 -(void)setHasError_:(id)arg {
     [activeField setHasError: [TiUtils boolValue:arg /*def:NO*/]];
 }
-
--(void)setDisabledColor_:(id)color
-{
-    if (color!=nil) {
-        TiColor *selColor = [TiUtils colorValue:color];
-        if (selColor!=nil) {
-//            [button setTitleColor:[selColor _color] forState:UIControlStateDisabled];
-        }
-    }
+-(void)setHasFocus_:(id)args {
+    [self doneTyping];
 }
 
 -(id)getText_ {

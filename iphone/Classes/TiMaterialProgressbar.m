@@ -15,7 +15,7 @@
 
 @implementation TiMaterialProgressbar
 
-float progress = 0;
+float progressValue = 0.f;
 
 #pragma mark Initializers and memory management
 
@@ -23,10 +23,9 @@ float progress = 0;
 {
     // This method is called right after allocating the view and
     // is useful for initializing anything specific to the view
-    //[self button];
     progress = [[MDProgress alloc] init];
-    [self addSubview:progress];
     
+    [self addSubview:progress];
     [super initializeState];
 }
 
@@ -40,7 +39,7 @@ float progress = 0;
 -(void)willMoveToSuperview:(UIView *)newSuperview
 {
     [self setBackgroundColor: [UIColor clearColor]];
-    [self progressbar: self.proxy];
+    [self progressb: self.proxy];
 }
 
 -(void)configurationSet
@@ -64,67 +63,113 @@ float progress = 0;
 
 #pragma mark Main Object
 
--(MDProgress*)progressbar:(id)args {
-    [progress setProgress:[TiUtils floatValue:[self.proxy valueForKey:@"progress"]]];
+-(MDProgress*)progressb:(id)args {
+    NSLog(@"Applying properties to progress");
+    progressValue = [TiUtils floatValue:[self.proxy valueForKey:@"progress"]];
     
     TiColor *trackColor = [TiUtils colorValue:[self.proxy valueForKey:@"trackColor"]];
+    TiColor *color = [TiUtils colorValue:[self.proxy valueForKey:@"color"]];
     
-    TiColor *bg = [TiUtils colorValue:[self.proxy valueForKey:@"backgroundColor"]];
-//    TiColor *ripple = [TiUtils colorValue:[self.proxy valueForKey:@"rippleColor"]];
-//    TiColor *color = [TiUtils colorValue:[self.proxy valueForKey:@"color"]];
-//    TiColor *hintColor = [TiUtils colorValue:[self.proxy valueForKey:@"hintColor"]];
-//    TiColor *errorColor = [TiUtils colorValue:[self.proxy valueForKey:@"errorColor"]];
+    NSInteger style = [TiUtils intValue: [self.proxy valueForKey:@"progressStyle"] def:0];
+    NSInteger type  = [TiUtils intValue: [self.proxy valueForKey:@"progressType"] def:0];
+    float radius = [TiUtils floatValue:[self.proxy valueForKey:@"radius"] def: -1.f];
     
-    [progress setType:MDProgressTypeDeterminate];
-    [progress setType:MDProgressStyleCircular];
+    NSLog(@"Progressb style and type: %d, %d", style, type);
+    
+    [progress setProgressColor: [color _color]];
     [progress setTrackColor:[trackColor _color]];
+    
+    self.style = style;
+    self.type = type;
+    
+    [progress setProgressStyle: self.style];
+    [progress setProgressType: self.type];
+    
+    if (radius != -1.f) {
+        [progress setCircularSize:radius];
+    }
+    [progress setProgress: progressValue];
     
     return progress;
 }
 
 #pragma mark Setters
 
--(void)setDisabledColor_:(id)color
-{
-    if (color!=nil) {
-        TiColor *selColor = [TiUtils colorValue:color];
-        if (selColor!=nil) {
-            //            [button setTitleColor:[selColor _color] forState:UIControlStateDisabled];
-        }
-    }
+-(id)setStyle_:(id)value {
+    self.style = [TiUtils intValue:value];
+    [progress setStyle:self.style];
 }
-
--(void)setColor_:(id)color
-{
-    if (color!=nil)
-    {
-        TiColor *c = [TiUtils colorValue:color];
-        //        if (c!=nil)
-        //        {
-        //            [button setTitleColor:[c _color] forState:UIControlStateNormal];
-        //        }
-        //        else if (button.buttonType==UIButtonTypeCustom)
-        //        {
-        //            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        //        }
-    }
+-(id)setType_:(id)value {
+    self.type = [TiUtils intValue:value];
+    [progress setType:self.type];
 }
-
--(void)setTextAlign_:(id)align
-{
+-(id)setDeterminate_:(id)value {
+    [progress setProgressType:MDProgressTypeDeterminate];
+}
+-(id)setIndeterminate_:(id)value {
+    [progress setProgressType:MDProgressTypeIndeterminate];
+}
+-(id)setCircular_:(id)value {
+    [progress setProgressStyle:MDProgressStyleCircular];
+}
+-(id)setLinear_:(id)value {
+    [progress setProgressStyle:MDProgressStyleLinear];
+}
+-(id)setProgressColor_:(id)value {
     
+    TiColor *c = [TiUtils colorValue:value];
+    
+    [progress setProgressColor: [c _color]];
+}
+-(id)setTrackColor_:(id)value {
+    
+    TiColor *c = [TiUtils colorValue:value];
+    
+    [progress setTrackColor: [c _color]];
+}
+-(id)setValue_:(id)value {
+    
+    NSLog(@"setValue_: %@", value);
+    
+    progressValue = [TiUtils floatValue:value];
+    [progress setProgress: progressValue];
+}
+-(id)setCircularSize_:(float)value {
+    //NSLog(@"setCircularSize_: %f ", value);
+    
+    [progress setCircularSize: value];
 }
 
--(void)setBackgroundColor_:(id)value
-{
-    if (value!=nil)
-    {
-        TiColor *color = [TiUtils colorValue:value];
-        //        [button setBackgroundColor:[color _color]];
-    }
+-(id)setEnabled_:(id)value {
+//    BOOL val = [TiUtils boolValue:value];
+//    
+//    if (val == YES) {
+//        [self addSubview:progress];
+//    } else {
+//        [progress removeFromSuperview];
+//    }
+}
+
+-(id)show {
+    [self addSubview:progress];
 }
 
 #pragma mark Event Listeners
 
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

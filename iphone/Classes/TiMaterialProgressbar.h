@@ -14,4 +14,7 @@
     @private MDProgress *progress;
 }
 
+@property NSInteger *style;
+@property NSInteger *type;
+
 @end
