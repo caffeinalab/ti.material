@@ -8,7 +8,8 @@
 
 #import "TiMaterialTextFieldProxy.h"
 
-@implementation TiMaterialTextFieldProxy
+@implementation TiMaterialTextFieldProxy 
+
 -(id)init
 {
     // This is the designated initializer method and will always be called
@@ -92,4 +93,6 @@
 {
     // This method is called right after the view has detached from the proxy
 }
+
+
 @end

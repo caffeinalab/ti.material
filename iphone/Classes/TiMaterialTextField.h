@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TiUIView.h"
+#import "MDTextField.h"
 
-@interface TiMaterialTextField : TiUIView
+@interface TiMaterialTextField : TiUIView {
+    @private
+        MDTextField *activeField;
+}
 
 @end

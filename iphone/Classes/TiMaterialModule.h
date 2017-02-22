@@ -7,8 +7,16 @@
 
 #import "TiModule.h"
 
-@interface TiMaterialModule : TiModule
-{
+@interface TiMaterialModule : TiModule {
+    int MDTextFieldViewStateNormal,
+    MDTextFieldViewStateHighlighted,
+    MDTextFieldViewStateError,
+    MDTextFieldViewStateDisabled;
+    
+    int MDButtonTypeRaised,
+    MDButtonTypeFlat,
+    MDButtonTypeFloatingAction,
+    MDButtonTypeFloatingActionRotation;
 }
 
 @end

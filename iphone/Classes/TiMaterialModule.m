@@ -33,7 +33,17 @@
 	// this method is called when the module is first loaded
 	// you *must* call the superclass
 	[super startup];
+    
+    MDTextFieldViewStateNormal = 0;
+    MDTextFieldViewStateHighlighted = 1;
+    MDTextFieldViewStateError = 2;
+    MDTextFieldViewStateDisabled = 3;
 
+    MDButtonTypeRaised = 0;
+    MDButtonTypeFlat = 1;
+    MDButtonTypeFloatingAction = 2;
+    MDButtonTypeFloatingActionRotation = 3;
+    
 	NSLog(@"[INFO] %@ loaded",self);
 }
 
@@ -93,10 +103,17 @@
 	return @"hello world";
 }
 
--(id)exampleProp
-{
-	// example property getter
-	return @"hello world";
+-(id)MDTextFieldViewStateNormal {
+	return MDTextFieldViewStateNormal;
+}
+-(id)MDTextFieldViewStateHighlighted {
+    return MDTextFieldViewStateHighlighted;
+}
+-(id)MDTextFieldViewStateError {
+    return MDTextFieldViewStateError;
+}
+-(id)MDTextFieldViewStateDisabled {
+    return MDTextFieldViewStateDisabled;
 }
 
 -(void)setExampleProp:(id)value
