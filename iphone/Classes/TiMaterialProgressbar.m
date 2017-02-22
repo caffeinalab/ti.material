@@ -140,16 +140,6 @@ float progressValue = 0.f;
     [progress setCircularSize: value];
 }
 
--(id)setEnabled_:(id)value {
-//    BOOL val = [TiUtils boolValue:value];
-//    
-//    if (val == YES) {
-//        [self addSubview:progress];
-//    } else {
-//        [progress removeFromSuperview];
-//    }
-}
-
 -(id)show {
     [self addSubview:progress];
 }

@@ -69,7 +69,7 @@
 
 -(MDTextField*)textField:(id)args {
     TiColor *bg = [TiUtils colorValue:[self.proxy valueForKey:@"backgroundColor"]];
-    TiColor *ripple = [TiUtils colorValue:[self.proxy valueForKey:@"rippleColor"]];
+    //TiColor *ripple = [TiUtils colorValue:[self.proxy valueForKey:@"rippleColor"]];
     TiColor *color = [TiUtils colorValue:[self.proxy valueForKey:@"color"]];
     TiColor *hintColor = [TiUtils colorValue:[self.proxy valueForKey:@"hintColor"]];
     TiColor *errorColor = [TiUtils colorValue:[self.proxy valueForKey:@"errorColor"]];
@@ -181,8 +181,8 @@
     
     CGRect aRect = self.frame;
     aRect.size.height -= kbHeight;
-    CGPoint p = CGPointMake(0, activeField.frame.origin.y +
-                            activeField.frame.size.height);
+//    CGPoint p = CGPointMake(0, activeField.frame.origin.y +
+//                            activeField.frame.size.height);
     
     
     [self.proxy fireEvent:@"keyboardShown"];
