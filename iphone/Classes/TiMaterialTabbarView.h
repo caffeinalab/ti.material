@@ -11,7 +11,6 @@
 
 @interface TiMaterialTabbarView : TiUIView {
     @private MDTabBarViewController *tabBarViewController;
-    @private UIView *square;
 }
 
 @end

@@ -1,0 +1,6 @@
+"/Users/ani.sinanaj/Mobile/timaterial/ti.material/android/build/generated/java/ti/material/TiMaterialBootstrap.java"
+"/Users/ani.sinanaj/Mobile/timaterial/ti.material/android/src/ti/material/ButtonProxy.java"
+"/Users/ani.sinanaj/Mobile/timaterial/ti.material/android/src/ti/material/ButtonView.java"
+"/Users/ani.sinanaj/Mobile/timaterial/ti.material/android/src/ti/material/SwitchProxy.java"
+"/Users/ani.sinanaj/Mobile/timaterial/ti.material/android/src/ti/material/SwitchView.java"
+"/Users/ani.sinanaj/Mobile/timaterial/ti.material/android/src/ti/material/TiMaterialModule.java"
