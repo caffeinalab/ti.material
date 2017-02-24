@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/Classes/TiMaterialProgressbar.m \
-  /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/Classes/TiMaterialProgressbar.h \
+  /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/Classes/TiMaterialProgressBar.m \
+  /Users/ani.sinanaj/Mobile/timaterial/ti.material/iphone/Classes/TiMaterialProgressBar.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiUIVIew.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiProxy.h \
   /Users/ani.sinanaj/Library/Application\ Support/Titanium/mobilesdk/osx/6.0.0.GA/iphone/include/TiEvaluator.h \

@@ -104,6 +104,32 @@ thumbOffColor | String | n/a | Color for the switch thumb when positioned to `Of
 
 - change
 
+## MDProgress
+
+To create a progressbar use the following code. 
+
+```
+var pb = Material.createProgressBar({});
+```
+
+It accepts these properties:
+
+### Properties
+
+Property | Type | Default | Description
+--- | --- | --- | ----
+value | float | 0 | Determines the progress
+width | float | Ti.UI.FILL | Sets the width of the progressbar
+trackTintColor | String | `transparent` | Color for the track
+tintColor | String | `transparent` | Color of the progress
+radius | float | 50 | Radius of the circular progressbar
+progressSyle | enum | 0 | 0 stands for circular, 1 is for linear progressbar
+progressType | enum | 0 | 0 is for indeterminate, 1 is for determinate
+
+### Events
+
+n/a
+
 ## LICENSE
 
 MIT.

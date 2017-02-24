@@ -8,6 +8,6 @@
 
 #import "TiViewProxy.h"
 
-@interface TiMaterialProgressbarProxy : TiViewProxy
+@interface TiMaterialProgressBarProxy : TiViewProxy
 
 @end

@@ -6,14 +6,14 @@
 //
 //
 
-#import "TiMaterialProgressbar.h"
+#import "TiMaterialProgressBar.h"
 
 
-@interface TiMaterialProgressbar ()
+@interface TiMaterialProgressBar ()
 
 @end
 
-@implementation TiMaterialProgressbar
+@implementation TiMaterialProgressBar
 
 float progressValue = 0.f;
 
@@ -65,10 +65,10 @@ float progressValue = 0.f;
 
 -(MDProgress*)progressb:(id)args {
     NSLog(@"Applying properties to progress");
-    progressValue = [TiUtils floatValue:[self.proxy valueForKey:@"progress"]];
+    progressValue = [TiUtils floatValue:[self.proxy valueForKey:@"value"]];
     
-    TiColor *trackColor = [TiUtils colorValue:[self.proxy valueForKey:@"trackColor"]];
-    TiColor *color = [TiUtils colorValue:[self.proxy valueForKey:@"color"]];
+    TiColor *trackColor = [TiUtils colorValue:[self.proxy valueForKey:@"trackTintColor"]];
+    TiColor *color = [TiUtils colorValue:[self.proxy valueForKey:@"tintColor"]];
     
     NSInteger style = [TiUtils intValue: [self.proxy valueForKey:@"progressStyle"] def:0];
     NSInteger type  = [TiUtils intValue: [self.proxy valueForKey:@"progressType"] def:0];
@@ -90,11 +90,17 @@ float progressValue = 0.f;
     }
     [progress setProgress: progressValue];
     
+    [self setOpacity_:[self.proxy valueForKey:@"opacity"]];
+    
     return progress;
 }
 
 #pragma mark Setters
 
+-(id)setOpacity_:(id)value {
+    float f = [TiUtils floatValue:value def:1.0];
+    progress.alpha = f;
+}
 -(id)setStyle_:(id)value {
     self.style = [TiUtils intValue:value];
     [progress setStyle:self.style];
@@ -115,13 +121,13 @@ float progressValue = 0.f;
 -(id)setLinear_:(id)value {
     [progress setProgressStyle:MDProgressStyleLinear];
 }
--(id)setProgressColor_:(id)value {
+-(id)setTintColor_:(id)value {
     
     TiColor *c = [TiUtils colorValue:value];
     
     [progress setProgressColor: [c _color]];
 }
--(id)setTrackColor_:(id)value {
+-(id)setTrackTintColor_:(id)value {
     
     TiColor *c = [TiUtils colorValue:value];
     
@@ -134,7 +140,7 @@ float progressValue = 0.f;
     progressValue = [TiUtils floatValue:value];
     [progress setProgress: progressValue];
 }
--(id)setCircularSize_:(float)value {
+-(id)setRadius_:(float)value {
     //NSLog(@"setCircularSize_: %f ", value);
     
     [progress setCircularSize: value];

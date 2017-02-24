@@ -6,9 +6,9 @@
 //
 //
 
-#import "TiMaterialProgressbarProxy.h"
+#import "TiMaterialProgressBarProxy.h"
 
-@implementation TiMaterialProgressbarProxy
+@implementation TiMaterialProgressBarProxy
 -(id)init
 {
     // This is the designated initializer method and will always be called

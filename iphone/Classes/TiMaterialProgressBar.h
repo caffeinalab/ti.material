@@ -10,7 +10,7 @@
 #import "TiUIVIew.h"
 #import "MDProgress.h"
 
-@interface TiMaterialProgressbar : TiUIView {
+@interface TiMaterialProgressBar : TiUIView {
     @private MDProgress *progress;
 }
 
