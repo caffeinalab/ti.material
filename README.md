@@ -3,6 +3,7 @@
 ## Moved to [Caffeinalab](http://github.com/caffeinalab/ti.material)
 
 *Proudly developed at [Caffeina](http://caffeina.com)*
+
 -
 
 #### Module to port [Google Material Design](http://www.google.com/design/spec/material-design/introduction.html) to Titanium, specifically iOS!
