@@ -79,6 +79,31 @@ new:
 - rotationstarted
 - rotationcompleted
 
+## MDSwitch
+
+To create a switch use the following code. 
+
+```
+var switch_ = Material.createSwitch({});
+```
+
+It accepts these properties:
+
+### Properties
+
+Property | Type | Default | Description
+--- | --- | --- | ----
+height | float | Ti.UI.FILL | This property doesn't change the size of the actual switch but it's parent container
+width | float | Ti.UI.FILL | This property doesn't change the size of the actual switch but it's parent container
+trackOnColor | String | n/a | Color for the track of the switch when it is positioned on `On`
+trackOffColor | String | n/a | Color for the track of the switch when it is positioned on `Off` 
+thumbOnColor | String | n/a | Color for the switch thumb when positioned to `On`
+thumbOffColor | String | n/a | Color for the switch thumb when positioned to `On`
+
+### Events
+
+- change
+
 ## LICENSE
 
 MIT.
