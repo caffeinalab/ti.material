@@ -1,8 +1,8 @@
 <!-- <img src="logo.jpg" /> -->
 
-## Moved to [Caffeinalab](http://github.com/caffeinalab/ti.material)
+*Proudly developed at [Caffeina](http://caffeina.com)*
 
-Proudly developed at [Caffeina](http://caffeina.com)
+-
 
 #### Module to port [Google Material Design](http://www.google.com/design/spec/material-design/introduction.html) to Titanium, specifically iOS!
 Thanks to [FPT Software](http://www.fpt-software.com/) for developing a great [library](https://github.com/fpt-software/Material-Controls-For-iOS) that made this possible.
