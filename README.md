@@ -1,5 +1,9 @@
 <!-- <img src="logo.jpg" /> -->
 
+## Quick Start
+
+### Get it [![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/ti.material)
+
 *Proudly developed at [Caffeina](http://caffeina.com)*
 
 -
@@ -30,9 +34,6 @@ MDTimePicker | [x] | [x] | []
 <image src="http://i.imgur.com/HZ5465U.png" width="40%"/>
 <image src="http://i.imgur.com/MoGBPzr.png"  width="40%"/>
 
-## Quick Start
-
-### Get it [![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/ti.material)
 
 ## Install the module
 
