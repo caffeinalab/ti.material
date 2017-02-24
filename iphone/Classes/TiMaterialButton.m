@@ -105,7 +105,7 @@
         [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, 65.0f, 65.0f)];
     } else {
         [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, hasWidth, hasHeight)];
-        [button setFrame:CGRectMake(15.0f / 2, 15.0f / 2, hasWidth - 15.0f, hasWidth - 15.0f)];
+        [button setFrame:CGRectMake(15.0f / 2, 15.0f / 2, hasWidth - 15.0f, hasHeight - 15.0f)];
     }
 }
 
