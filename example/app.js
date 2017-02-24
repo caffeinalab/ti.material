@@ -23,7 +23,7 @@ var content = Ti.UI.createView({
 
 
 function addButton() {
-	var ob = M.createButton({
+	var ob = Material.createButton({
 		width: 65,
 		height: 65,
 		backgroundColor: "#AA34CF", 
@@ -51,7 +51,7 @@ function addButton() {
 }
 
 function addTextField() {
-	var ob = M.createTextField({
+	var ob = Material.createTextField({
 		width: 200, 
 		height: 80,
 		
@@ -90,7 +90,7 @@ function addTextField() {
 
 
 function addProgress() {
-	var progress = M.createProgressBar({
+	var progress = Material.createProgressBar({
 		height: 50,
 		width: 50,
 		value: 0.4,
@@ -106,7 +106,7 @@ function addProgress() {
 }
 
 function addSwitch() {
-	var switch_c = M.createSwitch({
+	var switch_c = Material.createSwitch({
 		top: 0,
 		height: 100,
 		width: 50,

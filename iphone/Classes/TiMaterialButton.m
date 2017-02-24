@@ -34,6 +34,8 @@
 -(void)dealloc
 {
     // Release objects and memory allocated by the view
+    [button removeTarget:self action:@selector(controlAction:forEvent:)
+     forControlEvents:UIControlEventAllTouchEvents];
     RELEASE_TO_NIL(button);
     [super dealloc];
 }

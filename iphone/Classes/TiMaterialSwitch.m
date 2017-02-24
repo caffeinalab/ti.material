@@ -29,6 +29,7 @@
 -(void)dealloc
 {
     // Release objects and memory allocated by the view
+    [switchUI removeTarget:self action:@selector(updateState:) forControlEvents:UIControlEventValueChanged];
     RELEASE_TO_NIL(switchUI);
     [super dealloc];
 }
@@ -77,7 +78,6 @@
     [self setOnLabel:[TiUtils stringValue:[self.proxy valueForKey:@"onLabel"]]];
     [self setOffLabel:[TiUtils stringValue:[self.proxy valueForKey:@"onLabel"]]];
     
-    
     [switchUI addTarget:self action:@selector(updateState:) forControlEvents:UIControlEventValueChanged];
     
     return switchUI;
@@ -109,11 +109,17 @@
 #pragma mark Event Listeners
 
 - (void)updateState:(id)sender {
-    NSDictionary *evt = @{
-        @"value": switchUI.on ? @"true" : @"false"
-    };
     
-    [self.proxy fireEvent:@"change" withObject:evt];
+    NSNumber * newValue = [NSNumber numberWithBool:switchUI.isOn];
+    id current = [self.proxy valueForUndefinedKey:@"value"];
+    [self.proxy replaceValue:newValue forKey:@"value" notification:NO];
+    
+    //No need to setValue, because it's already been set.
+    if ([self.proxy _hasListeners:@"change"] && (current != newValue) && ![current isEqual:newValue])
+    {
+        [self.proxy fireEvent:@"change"
+                   withObject:[NSDictionary dictionaryWithObject:newValue forKey:@"value"]];
+    }
 }
 
 @end
