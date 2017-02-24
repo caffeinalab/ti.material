@@ -1,7 +1,5 @@
 <!-- <img src="logo.jpg" /> -->
 
-## Moved to [Caffeinalab](http://github.com/caffeinalab/ti.material)
-
 *Proudly developed at [Caffeina](http://caffeina.com)*
 
 -
