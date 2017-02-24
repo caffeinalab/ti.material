@@ -67,18 +67,23 @@
 
 -(MDButton*)button
 {
-    [button setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    [button setFrame:CGRectMake(
+                                15.0f / 2,
+                                15.0f / 2,
+                                self.frame.size.width - 10.0f,
+                                self.frame.size.height - 10.0f)];
+    
     [button addTarget:self action:@selector(controlAction:forEvent:)
             forControlEvents:UIControlEventAllTouchEvents];
     
     [self setTitle_:                    [self.proxy valueForKey:@"title"]];
     [self setColor_:                    [self.proxy valueForKey:@"color"]];
-    [self setBackgroundColor_:          [self.proxy valueForKey:@"backgroundColor"]];
     [self setTouchFeedbackColor_:       [self.proxy valueForKey:@"touchFeedbackColor"]];
     [self setFont_:                     [self.proxy valueForKey:@"font" ]];
-    [self setStyle_:                    [self.proxy valueForKey:@"style"]];
     [self setEnabled_:                  [self.proxy valueForKey:@"enabled"]];
+    [self setBackgroundColor_:          [self.proxy valueForKey:@"backgroundColor"]];
     [self setOpacity_:                  [self.proxy valueForKey:@"opacity"]];
+    [self setStyle_:                    [self.proxy valueForKey:@"style"]];
     [self setRotated_:                  [self.proxy valueForKey:@"rotated"]];
     [self setImageNormal_:              [self.proxy valueForKey:@"imageNormal"]];
     [self setImageRotated_:             [self.proxy valueForKey:@"imageRotated"]];
@@ -89,61 +94,89 @@
 
 #pragma mark Setters
 
+-(void)updateFrames:(id) value {
+    style = [TiUtils intValue:[self.proxy valueForKey:@"style"]];
+    
+    float hasWidth  = [TiUtils floatValue:[self.proxy valueForKey:@"width"] def:150.0f];
+    float hasHeight = [TiUtils floatValue:[self.proxy valueForKey:@"height"] def:40.0f];
+    
+    if (style == MDButtonTypeFloatingAction || style == MDButtonTypeFloatingActionRotation) {
+        [button setFrame:CGRectMake(button.frame.origin.x, button.frame.origin.y, 50.0f, 50.0f)];
+        [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, 65.0f, 65.0f)];
+    } else {
+        [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, hasWidth, hasHeight)];
+        [button setFrame:CGRectMake(15.0f / 2, 15.0f / 2, hasWidth - 15.0f, hasWidth - 15.0f)];
+    }
+}
+
 -(void)setFont_:(id)font
 {
-    WebFont *f = [TiUtils fontValue:font def:nil];
-    [[[self button] titleLabel] setFont:[f font]];
+    if (font != nil) {
+        WebFont *f = [TiUtils fontValue:font def:nil];
+        [[button titleLabel] setFont:[f font]];
+    }
 }
 -(void)setStyle_:(id)style_
 {
     BOOL hasImage = [self.proxy valueForKey:@"backgroundImage"]!=nil;
     MDButtonType defaultType = (hasImage==YES) ? MDButtonTypeRaised : MDButtonTypeFlat;
     style = [TiUtils intValue:style_ def:defaultType];
+    
+    [self updateFrames:style];
     [button setMdButtonType:style];
+    [self setBackgroundColor_:[self.proxy valueForKey:@"backgroundColor"]];
 }
 -(void)setTitleColor_:(id) value
 {
-    if (value == nil) return nil;
-    TiColor *color = [TiUtils colorValue:value];
-    [button setTitleColor: [color _color] forState:UIControlStateNormal];
+    if (value != nil) {
+        TiColor *color = [TiUtils colorValue:value];
+        [button setTitleColor: [color _color] forState:UIControlStateNormal];
+    }
 }
 -(void)setTouchFeedbackColor_:(id) value
 {
-    if (value == nil) return nil;
-    TiColor *color = [TiUtils colorValue:value];
-    [button setRippleColor: [color _color]];
+    if (value != nil) {
+        TiColor *color = [TiUtils colorValue:value];
+        [button setRippleColor: [color _color]];
+    }
 }
 -(void)setTitle_:(id) value
 {
-    if (value == nil) return nil;
-    NSString *t = [TiUtils stringValue:value];
-    [button setTitle:t forState:UIControlStateNormal];
+    NSLog(@"Setting title: %@ ", value);
+    if (value != nil) {
+        [button setTitle:[TiUtils stringValue:value] forState:UIControlStateNormal];
+    }
 }
 -(void)setEnabled_:(id) value
 {
-    if (value == nil) return nil;
-    BOOL *b = [TiUtils boolValue:value];
-    [button setEnabled:b];
+    if (value != nil) {
+        BOOL *b = [TiUtils boolValue:value];
+        [button setEnabled:b];
+    }
 }
 -(void)setRotated_:(id) value
 {
-    if (value == nil) return nil;
-    BOOL *b = [TiUtils boolValue:value];
-    [button setRotated:b];
+    if (value != nil) {
+        BOOL *b = [TiUtils boolValue:value];
+        [button setRotated:b];
+    }
 }
 -(void)setOpacity_:(id) value
 {
-    if (value == nil) return nil;
-    float b = [TiUtils floatValue:value];
-    [button setAlpha:b];
+    if (value != nil) {
+        float b = [TiUtils floatValue:value];
+        [button setAlpha:b];
+    }
 }
 -(void)setImageNormal_:(id) value {
-    if (value == nil) return nil;
-    [button setImageNormal:[TiUtils image:value proxy:self.proxy]];
+    if (value != nil) {
+        [button setImageNormal:[TiUtils image:value proxy:self.proxy]];
+    }
 }
 -(void)setImageRotated_:(id) value {
-    if (value == nil) return nil;
-    [button setImageRotated:[TiUtils image:value proxy:self.proxy]];
+    if (value != nil) {
+        [button setImageRotated:[TiUtils image:value proxy:self.proxy]];
+    }
 }
 
 -(void)setDisabledColor_:(id)color
