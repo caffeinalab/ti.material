@@ -23,7 +23,7 @@ float progressValue = 0.f;
 {
     // This method is called right after allocating the view and
     // is useful for initializing anything specific to the view
-    progress = [[MDProgress alloc] init];
+    progress = [[MDProgress alloc] initWithFrame:self.frame];
     
     [self addSubview:progress];
     [super initializeState];

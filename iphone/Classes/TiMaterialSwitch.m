@@ -62,10 +62,10 @@
 
 -(MDSwitch*)switchUICreate:(id)args {
     
-    TiColor *trackOn  = [TiUtils colorValue:[self.proxy valueForKey:@"trackOn"]];
-    TiColor *trackOff = [TiUtils colorValue:[self.proxy valueForKey:@"trackOff"]];
-    TiColor *thumbOn  = [TiUtils colorValue:[self.proxy valueForKey:@"thumbOn"]];
-    TiColor *thumbOff = [TiUtils colorValue:[self.proxy valueForKey:@"thumbOff"]];
+    TiColor *trackOn  = [TiUtils colorValue:[self.proxy valueForKey:@"trackOnColor"]];
+    TiColor *trackOff = [TiUtils colorValue:[self.proxy valueForKey:@"trackOffColor"]];
+    TiColor *thumbOn  = [TiUtils colorValue:[self.proxy valueForKey:@"thumbOnColor"]];
+    TiColor *thumbOff = [TiUtils colorValue:[self.proxy valueForKey:@"thumbOffColor"]];
     
     [switchUI setOn:[TiUtils boolValue:[self.proxy valueForKey:@"value"]]];
     
@@ -85,22 +85,22 @@
 
 #pragma mark Setters
 
--(void)setTrackOnBackground_:(id)value
+-(void)setTrackOnColor_:(id)value
 {
     TiColor *c = [TiUtils colorValue:value];
     [switchUI setTrackOn:[c _color]];
 }
--(void)setTrackOffBackground_:(id)value
+-(void)setTrackOffColor_:(id)value
 {
     TiColor *c = [TiUtils colorValue:value];
     [switchUI setTrackOff:[c _color]];
 }
--(void)setThumbOnBackground_:(id)value
+-(void)setThumbOnColor_:(id)value
 {
     TiColor *c = [TiUtils colorValue:value];
     [switchUI setThumbOn:[c _color]];
 }
--(void)setThumbOffBackground_:(id)value
+-(void)setThumbOffColor_:(id)value
 {
     TiColor *c = [TiUtils colorValue:value];
     [switchUI setThumbOff:[c _color]];
