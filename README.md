@@ -32,7 +32,9 @@ MDDatePicker | [x] | [x] | []
 MDTimePicker | [x] | [x] | []
 
 <image src="http://i.imgur.com/HZ5465U.png" width="40%"/>
-<image src="http://i.imgur.com/MoGBPzr.png"  width="40%"/>
+<image src="http://i.imgur.com/YhSj7k0.png"  width="40%"/>
+<image src="http://i.imgur.com/GVs8pR0.png" width="40%"/>
+<image src="http://i.imgur.com/paB5ieB.png" width="40%"/>
 
 
 ## Install the module
