@@ -67,28 +67,23 @@
 
 -(MDButton*)button
 {
-    BOOL hasImage = [self.proxy valueForKey:@"backgroundImage"]!=nil;
-    MDButtonType defaultType = (hasImage==YES) ? MDButtonTypeRaised : MDButtonTypeFlat;
-    style = [TiUtils intValue:[self.proxy valueForKey:@"style"] def:defaultType];
-    
-    TiColor *bg = [TiUtils colorValue:[self.proxy valueForKey:@"backgroundColor"]];
-    TiColor *ripple = [TiUtils colorValue:[self.proxy valueForKey:@"rippleColor"]];
-    TiColor *color = [TiUtils colorValue:[self.proxy valueForKey:@"color"]];
-    WebFont *f = [TiUtils fontValue:[self.proxy valueForKey:@"font"] def:nil];    
-    
-    [button setMdButtonType:style];
-    [button
-     setTitle:[TiUtils stringValue:[self.proxy valueForKey:@"title"]]
-     forState:UIControlStateNormal];
-    
     [button setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    [button setBackgroundColor: [bg _color]];
-    [button setRippleColor: [ripple _color]];
-    [button setTitleColor:[color _color] forState:UIControlStateNormal];
-    [[button titleLabel] setFont:[f font]];
-    [button addTarget:self action:@selector(controlAction:forEvent:) forControlEvents:UIControlEventAllTouchEvents];
-    button.exclusiveTouch = YES;
+    [button addTarget:self action:@selector(controlAction:forEvent:)
+            forControlEvents:UIControlEventAllTouchEvents];
     
+    [self setTitle_:                    [self.proxy valueForKey:@"title"]];
+    [self setColor_:                    [self.proxy valueForKey:@"color"]];
+    [self setBackgroundColor_:          [self.proxy valueForKey:@"backgroundColor"]];
+    [self setTouchFeedbackColor_:       [self.proxy valueForKey:@"touchFeedbackColor"]];
+    [self setFont_:                     [self.proxy valueForKey:@"font" ]];
+    [self setStyle_:                    [self.proxy valueForKey:@"style"]];
+    [self setEnabled_:                  [self.proxy valueForKey:@"enabled"]];
+    [self setOpacity_:                  [self.proxy valueForKey:@"opacity"]];
+    [self setRotated_:                  [self.proxy valueForKey:@"rotated"]];
+    [self setImageNormal_:              [self.proxy valueForKey:@"imageNormal"]];
+    [self setImageRotated_:             [self.proxy valueForKey:@"imageRotated"]];
+    
+    button.exclusiveTouch = YES;
     return button;
 }
 
@@ -96,11 +91,59 @@
 
 -(void)setFont_:(id)font
 {
-    if (font!=nil)
-    {
-        WebFont *f = [TiUtils fontValue:font def:nil];
-        [[[self button] titleLabel] setFont:[f font]];
-    }
+    WebFont *f = [TiUtils fontValue:font def:nil];
+    [[[self button] titleLabel] setFont:[f font]];
+}
+-(void)setStyle_:(id)style_
+{
+    BOOL hasImage = [self.proxy valueForKey:@"backgroundImage"]!=nil;
+    MDButtonType defaultType = (hasImage==YES) ? MDButtonTypeRaised : MDButtonTypeFlat;
+    style = [TiUtils intValue:style_ def:defaultType];
+    [button setMdButtonType:style];
+}
+-(void)setTitleColor_:(id) value
+{
+    if (value == nil) return nil;
+    TiColor *color = [TiUtils colorValue:value];
+    [button setTitleColor: [color _color] forState:UIControlStateNormal];
+}
+-(void)setTouchFeedbackColor_:(id) value
+{
+    if (value == nil) return nil;
+    TiColor *color = [TiUtils colorValue:value];
+    [button setRippleColor: [color _color]];
+}
+-(void)setTitle_:(id) value
+{
+    if (value == nil) return nil;
+    NSString *t = [TiUtils stringValue:value];
+    [button setTitle:t forState:UIControlStateNormal];
+}
+-(void)setEnabled_:(id) value
+{
+    if (value == nil) return nil;
+    BOOL *b = [TiUtils boolValue:value];
+    [button setEnabled:b];
+}
+-(void)setRotated_:(id) value
+{
+    if (value == nil) return nil;
+    BOOL *b = [TiUtils boolValue:value];
+    [button setRotated:b];
+}
+-(void)setOpacity_:(id) value
+{
+    if (value == nil) return nil;
+    float b = [TiUtils floatValue:value];
+    [button setAlpha:b];
+}
+-(void)setImageNormal_:(id) value {
+    if (value == nil) return nil;
+    [button setImageNormal:[TiUtils image:value proxy:self.proxy]];
+}
+-(void)setImageRotated_:(id) value {
+    if (value == nil) return nil;
+    [button setImageRotated:[TiUtils image:value proxy:self.proxy]];
 }
 
 -(void)setDisabledColor_:(id)color
@@ -236,7 +279,7 @@
     
     NSMutableDictionary *evt = [TiUtils dictionaryWithCode:1 message:@"Rotation started"];
     
-    NSString *fireEvent = @"rotationStarted";
+    NSString *fireEvent = @"rotationstarted";
     //if ([self.proxy _hasListeners:fireEvent]) {
         [self.proxy fireEvent:fireEvent withObject:evt];
     //}
@@ -247,7 +290,7 @@
     
     NSMutableDictionary *evt = [TiUtils dictionaryWithCode:1 message:@"Rotation completed"];
     
-    NSString *fireEvent = @"rotationCompleted";
+    NSString *fireEvent = @"rotationcompleted";
     //if ([self.proxy _hasListeners:fireEvent]) {
         [self.proxy fireEvent:fireEvent withObject:evt];
     //}

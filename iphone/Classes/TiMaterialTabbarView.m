@@ -28,7 +28,6 @@ NSMutableArray *views;
     // Release objects and memory allocated by the view
     RELEASE_TO_NIL(tabBarViewController);
     RELEASE_TO_NIL(tabbar);
-    RELEASE_TO_NIL(square);
     
     [super dealloc];
 }
@@ -42,7 +41,6 @@ NSMutableArray *views;
 {
     // This method is called right after allocating the view and
     // is useful for initializing anything specific to the view
-    square = [[UIView alloc] initWithFrame:[self frame]];
     tabBarViewController = [[MDTabBarViewController alloc] initWithDelegate:self];
     [super initializeState];
     
@@ -60,25 +58,6 @@ NSMutableArray *views;
     [super configurationSet];
     
     NSLog(@"[VIEW LIFECYCLE EVENT] configurationSet");
-}
-
--(UIView*)square
-{
-    // Return the square view. If this is the first time then allocate and
-    // initialize it.
-    //tabBarViewController = [[MDTabBarViewController alloc] initWithDelegate:self];
-    //square = tabBarViewController.view;
-    if (tabBarViewController == nil) {
-        tabBarViewController = [[MDTabBarViewController alloc] initWithDelegate:self];
-    }
-    
-    if (square == nil) {
-        NSLog(@"[VIEW LIFECYCLE EVENT] square");
-        square = [[UIView alloc] initWithFrame:[self frame]];
-        [square addSubview:tabBarViewController.view];
-    }
-    
-    return square;
 }
 
 -(void)notifyOfColorChange:(TiColor*)newColor
@@ -113,15 +92,7 @@ NSMutableArray *views;
     
     NSLog(@"[VIEW LIFECYCLE EVENT] frameSizeChanged");
 		  
-    if (square != nil) {
-        
-        // You must call the special method 'setView:positionRect' against
-        // the TiUtils helper class. This method will correctly layout your
-        // child view within the correct layout boundaries of the new bounds
-        // of your view.
-        
-        [TiUtils setView:square positionRect:bounds];
-    }
+    //[TiUtils setView:square positionRect:bounds];
 }
 
 -(void)setColor_:(id)color
@@ -135,8 +106,6 @@ NSMutableArray *views;
     // Use the TiUtils methods to get the values from the arguments
     TiColor *newColor = [TiUtils colorValue:color];
     UIColor *clr = [newColor _color];
-    UIView *sq = [self square];
-    sq.backgroundColor = clr;
     
     // Signal a property change notification to demonstrate the use
     // of the proxy for the event listeners

@@ -50,10 +50,31 @@ Property | Type | Default | Description
 --- | --- | --- | ----
 title | String | App Title | The title to show in the notification center.
 color | String | n/a | The color of the button title
-rippleColor | String | n/a | The color of the ripple effect of the button
+touchFeedbackColor | String | n/a | The color of the ripple effect of the button
 backgroundColor | String | n/a | The color of the button background
 style | int | 0 | The style of the button going from 0 to 3. The last two being FAB
+font | font object | system font | The font of the button title
+enabled | Bool | true | Determines whether the element is enabled or not
+opacity | float | 1.0 | Opacity of the element
+rotated | Bool | false | Sets the rotation status of the FAB (style 3) button
+imageNormal | String | null | The image instead of the title for a FAB button in the not rotated state
+imageRotated | String | null | Same as above but for the rotated state of the button
 
+### Events
+
+Inherited from titanium:
+
+- touchstart
+- touchend
+- touchmove
+- touchcancel
+- click
+- dblclick
+
+new:
+
+- rotationstarted
+- rotationcompleted
 
 ## LICENSE
 
