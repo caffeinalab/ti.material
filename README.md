@@ -18,18 +18,18 @@ UI elements supported by the native library vs. ti.material
 
 UI | Original | ti.material (iOS) | ti.material (Android)
 --- | ---| --- | ----
-MDButton | [x] | [x] | []
-MDTableViewCell | [x] | [] | []
-MDProgress | [x] | [x] | []
-MDSlider | [x] | [] | []
-MDSwitch | [x] | [x] | []
-MDTabBar | [x] | [] | []
-MDTabBarViewController | [x] | [] | []
-MDTextField | [x] | [x] | []
-MDSnackbar | [x] | [] | []
-MDToast | [x] | [x] | []
-MDDatePicker | [x] | [x] | []
-MDTimePicker | [x] | [x] | []
+MDButton | :x: | :x: | :o:
+MDTableViewCell | :x: | :o: | :o:
+MDProgress | :x: | :x: | :o:
+MDSlider | :x: | :o: | :o:
+MDSwitch | :x: | :x: | :o:
+MDTabBar | :x: | :o: | :o:
+MDTabBarViewController | :x: | :o: | :o:
+MDTextField | :x: | :x: | :o:
+MDSnackbar | :x: | :o: | :o:
+MDToast | :x: | :x: | :o:
+MDDatePicker | :x: | :x: | :o:
+MDTimePicker | :x: | :x: | :o:
 
 <image src="http://i.imgur.com/HZ5465U.png" width="40%"/>
 <image src="http://i.imgur.com/YhSj7k0.png"  width="40%"/>
