@@ -98,7 +98,7 @@ width | float | Ti.UI.FILL | This property doesn't change the size of the actual
 trackOnColor | String | n/a | Color for the track of the switch when it is positioned on `On`
 trackOffColor | String | n/a | Color for the track of the switch when it is positioned on `Off` 
 thumbOnColor | String | n/a | Color for the switch thumb when positioned to `On`
-thumbOffColor | String | n/a | Color for the switch thumb when positioned to `On`
+thumbOffColor | String | n/a | Color for the switch thumb when positioned to `Off`
 
 ### Events
 
