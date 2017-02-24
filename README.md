@@ -20,9 +20,8 @@ MDToast | [x] | [x]
 MDDatePicker | [x] | [x]
 MDTimePicker | [x] | [x]
 
-<image src="https://www.dropbox.com/s/ehfrjdybp0tzqak/Simulator%20Screen%20Shot%2024%20Feb%202017%2C%2012.23.02%20PM.png?dl=0">
-
-<image src="https://www.dropbox.com/s/tppq3n6h041aoeo/Simulator%20Screen%20Shot%2024%20Feb%202017%2C%2012.28.00%20PM.png?dl=0">
+<image src="http://i.imgur.com/HZ5465U.png" width="40%"/>
+<image src="http://i.imgur.com/MoGBPzr.png"  width="40%"/>
 
 ## Install the module
 
