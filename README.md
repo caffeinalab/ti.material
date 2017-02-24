@@ -5,27 +5,34 @@
 -
 
 #### Module to port [Google Material Design](http://www.google.com/design/spec/material-design/introduction.html) to Titanium, specifically iOS!
+
 Thanks to [FPT Software](http://www.fpt-software.com/) for developing a great [library](https://github.com/fpt-software/Material-Controls-For-iOS) that made this possible.
+
+>The module is being developed for both iOS and Android to bring more features to Android as well, although for the moment the iOS version is usable while the Android version is in an early stage.
 
 UI elements supported by the native library vs. ti.material
 
-UI | Original | ti.material
+UI | Original | ti.material (iOS) | ti.material (Android)
 --- | ---| --- | ----
-MDButton | [x] | [x]
-MDTableViewCell | [x] | []
-MDProgress | [x] | [x]
-MDSlider | [x] | []
-MDSwitch | [x] | [x]
-MDTabBar | [x] | []
-MDTabBarViewController | [x] | []
-MDTextField | [x] | [x]
-MDSnackbar | [x] | []
-MDToast | [x] | [x]
-MDDatePicker | [x] | [x]
-MDTimePicker | [x] | [x]
+MDButton | [x] | [x] | []
+MDTableViewCell | [x] | [] | []
+MDProgress | [x] | [x] | []
+MDSlider | [x] | [] | []
+MDSwitch | [x] | [x] | []
+MDTabBar | [x] | [] | []
+MDTabBarViewController | [x] | [] | []
+MDTextField | [x] | [x] | []
+MDSnackbar | [x] | [] | []
+MDToast | [x] | [x] | []
+MDDatePicker | [x] | [x] | []
+MDTimePicker | [x] | [x] | []
 
 <image src="http://i.imgur.com/HZ5465U.png" width="40%"/>
 <image src="http://i.imgur.com/MoGBPzr.png"  width="40%"/>
+
+## Quick Start
+
+### Get it [![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/ti.material)
 
 ## Install the module
 
@@ -33,6 +40,12 @@ Unzip the latest release in your module directory and add to tiapp modules, then
 
 ```xml
 <module platform="ios">ti.material</module>
+```
+
+or through gitTio
+
+```bash
+$ gittio install ti.material
 ```
 
 Initialize it as below
