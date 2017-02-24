@@ -40,6 +40,8 @@ function addButton() {
 
 	ob.addEventListener("click", function(e) {
 		Ti.API.debug("Material button, clicked: ", e);
+		var date = Material.createDatepicker();
+		date.show();
 	});
 
 	ob.addEventListener("rotationCompleted", function(e) {
@@ -118,6 +120,10 @@ function addSwitch() {
 
 	switch_c.addEventListener("change", function(e) {
 		Ti.API.debug(e);
+		if(e.value == "true") {
+			var t = Material.createTime();
+			t.show();
+		}
 	});
 
 	content.add(switch_c);
