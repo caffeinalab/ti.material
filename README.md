@@ -25,15 +25,15 @@ MDTimePicker | [x] | [x]
 
 ## Install the module
 
-Unzip the latest release in your module directory and add to tiapp modules, or just type:
+Unzip the latest release in your module directory and add to tiapp modules, then add the module to **tiapp.xml**
 
-```
-
+```xml
+<module platform="ios">ti.material</module>
 ```
 
 Initialize it as below
 
-```
+```javascript
 var Material = require("ti.material");
 ```
 
@@ -41,7 +41,7 @@ var Material = require("ti.material");
 
 Creating a button is very straightforward. 
 
-```
+```javascript
 var button = Material.createButton({});
 ```
 
@@ -83,7 +83,7 @@ new:
 
 To create a switch use the following code. 
 
-```
+```javascript
 var switch_ = Material.createSwitch({});
 ```
 
@@ -108,7 +108,7 @@ thumbOffColor | String | n/a | Color for the switch thumb when positioned to `Of
 
 To create a progressbar use the following code. 
 
-```
+```javascript
 var pb = Material.createProgressBar({});
 ```
 
@@ -123,8 +123,8 @@ width | float | Ti.UI.FILL | Sets the width of the progressbar
 trackTintColor | String | `transparent` | Color for the track
 tintColor | String | `transparent` | Color of the progress
 radius | float | 50 | Radius of the circular progressbar
-progressSyle | enum | 0 | 0 stands for circular, 1 is for linear progressbar
-progressType | enum | 0 | 0 is for indeterminate, 1 is for determinate
+progressSyle | enum | 0 | 0 stands for **circular**, 1 is for **linear** progressbar
+progressType | enum | 0 | 0 is for **indeterminate**, 1 is for **determinate**
 
 ### Events
 

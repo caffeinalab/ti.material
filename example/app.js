@@ -8,32 +8,124 @@
 var win = Ti.UI.createWindow({
 	backgroundColor:'white'
 });
-var label = Ti.UI.createLabel();
-win.add(label);
 win.open();
 
 // TODO: write your module tests here
-var ti_material = require('ti.material');
-Ti.API.info("module is => " + ti_material);
+var Material = require('ti.material');
 
-label.text = ti_material.example();
+Ti.API.info("module is => " + Material);
 
-Ti.API.info("module exampleProp is => " + ti_material.exampleProp);
-ti_material.exampleProp = "This is a test value";
+var content = Ti.UI.createView({
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	layout: "vertical"
+});
 
-if (Ti.Platform.name == "android") {
-	var proxy = ti_material.createExample({
-		message: "Creating an example Proxy",
-		backgroundColor: "red",
-		width: 100,
-		height: 100,
-		top: 100,
-		left: 150
+
+function addButton() {
+	var ob = M.createButton({
+		width: 65,
+		height: 65,
+		backgroundColor: "#AA34CF", 
+		touchFeedbackColor: "orange", 
+		title: "Add",
+		color: "white",
+		style: 3,
+		font: {
+			fontSize: 12,
+			fontWeight: "bold"
+		},
+		top: 50
 	});
 
-	proxy.printMessage("Hello world!");
-	proxy.message = "Hi world!.  It's me again.";
-	proxy.printMessage("Hello world!");
-	win.add(proxy);
+	ob.addEventListener("click", function(e) {
+		Ti.API.debug("Material button, clicked: ", e);
+	});
+
+	ob.addEventListener("rotationCompleted", function(e) {
+		Ti.API.debug("Material button, clicked: ", e);
+	});
+
+	content.add(ob);
+
 }
 
+function addTextField() {
+	var ob = M.createTextField({
+		width: 200, 
+		height: 80,
+		
+		backgroundColor: "grey",
+		color: "black",
+		hintColor: "black",
+		errorColor: "red",
+		
+		label: "Team Mobile",
+		data: ["ani", "andrea", "flavio"],
+		hint: "This is da hint",
+
+		fullWidth: false,
+		enabled: true,
+		floatingLabel: true,
+		
+		//style: 0,
+		textFont: {
+			fontSize: 12
+		},
+		labelFont: {
+			fontSize: 11
+		},
+		maxCharacterCount: 10,
+		bottom: 15,
+		top: 15
+	});
+
+	ob.addEventListener("change", function(e) {
+		Ti.API.debug(e);
+	});
+
+	content.add(ob);
+}
+
+
+
+function addProgress() {
+	var progress = M.createProgressBar({
+		height: 50,
+		width: 50,
+		value: 0.4,
+		tintColor: "orange",
+		trackTintColor: "#AA34CF",
+		progressType: 1,
+		progressStyle: 1,
+		top: 15,
+		bottom: 15
+	});
+
+	content.add(progress);
+}
+
+function addSwitch() {
+	var switch_c = M.createSwitch({
+		top: 0,
+		height: 100,
+		width: 50,
+		trackOnColor: "#C93D64",
+		trackOffColor: "orange",
+		thumbOnColor: "orange",
+		thumbOffColor: "#C93D64"
+	});
+
+	switch_c.addEventListener("change", function(e) {
+		Ti.API.debug(e);
+	});
+
+	content.add(switch_c);
+}
+
+addButton();
+addTextField();
+addProgress();
+addSwitch();
+
+win.add(content);
