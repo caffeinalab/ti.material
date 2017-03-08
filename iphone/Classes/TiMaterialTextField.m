@@ -8,6 +8,7 @@
 
 #import "MDTextField.h"
 #import "TiMaterialTextField.h"
+#import "TiMaterialTextFieldProxy.h"
 
 @interface TiMaterialTextField () <MDTextFieldDelegate>
 
@@ -69,7 +70,6 @@
 
 -(MDTextField*)textField:(id)args {
     TiColor *bg = [TiUtils colorValue:[self.proxy valueForKey:@"backgroundColor"]];
-    //TiColor *ripple = [TiUtils colorValue:[self.proxy valueForKey:@"rippleColor"]];
     TiColor *color = [TiUtils colorValue:[self.proxy valueForKey:@"color"]];
     TiColor *hintColor = [TiUtils colorValue:[self.proxy valueForKey:@"hintColor"]];
     TiColor *errorColor = [TiUtils colorValue:[self.proxy valueForKey:@"errorColor"]];
@@ -79,54 +79,74 @@
     if (!activeField) {
         activeField = [[MDTextField alloc] initWithFrame:self.frame];
     }
+
     activeField.dividerAnimation = true;
-    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self addGestureRecognizer:tap];
-
     
-    [self setFullWidth_:[TiUtils boolValue:[self.proxy valueForKey:@"fullWidth"]]];
     [self setHint_:[TiUtils stringValue:[self.proxy valueForKey:@"hint"]]];
     [self setLabel_:[TiUtils stringValue:[self.proxy valueForKey:@"label"]]];
     [self setText_:[TiUtils stringValue:[self.proxy valueForKey:@"text"]]];
     
-//    [self setEnabled_:[TiUtils boolValue:[self.proxy valueForKey:@"enabled"] /*def:YES*/]];
-//    [self setHasError_:[TiUtils boolValue:[self.proxy valueForKey:@"hasError"] /*def:NO*/]];
+    [self setBackgroundColor_:[self.proxy valueForKey:@"backgroundColor"]];
+    [self setColor_:[self.proxy valueForKey:@"color"]];
+    [self setHintColor_:[self.proxy valueForKey:@"hintColor"]];
+    [self setErrorColor_:[self.proxy valueForKey:@"errorColor"]];
+    
+    [self setEnabled_:[self.proxy valueForKey:@"enabled"]];
+    [self setHasError_:[self.proxy valueForKey:@"hasError"]];
     
     if(data) {
-        [self setSuggestions_:data];
+        [self setData_:data];
     }
     
-    [activeField setHintColor:[hintColor _color]];
-    [activeField setTextColor:[color _color]];
-    [activeField setBackgroundColor:[bg _color]];
-    [activeField setErrorColor:[errorColor _color]];
-    [activeField setSingleLine:YES];
-
-    [activeField setLabelsFont:[[TiUtils fontValue:[self.proxy valueForKey:@"labelFont"]] font]];
-    [activeField setInputTextFont:[[TiUtils fontValue:[self.proxy valueForKey:@"textFont"]] font]];
-
-    [activeField setErrorMessage:[TiUtils stringValue:[self.proxy valueForKey:@"errorMessage"]]];
-    [activeField setFloatingLabel:[TiUtils boolValue:[self.proxy valueForKey:@"floatingLabel"] /*def:YES*/]];
-    [activeField setMaxCharacterCount:[TiUtils intValue:[self.proxy valueForKey:@"maxCharacterCount"]]];
+    [self setSingleLine_:[self.proxy valueForKey:@"singleLine"]];
+    [self setFloatingLabel_:[self.proxy valueForKey:@"floatingLabel"]];
+    [self setMaxCharacterCount_:[self.proxy valueForKey:@"maxCharacterCount"]];
+    
+    [self setFont_:[self.proxy valueForKey:@"font"]];
+    [self setLabelFont_:[self.proxy valueForKey:@"labelFont"]];
+    
+    [self setErrorMessage_:[self.proxy valueForKey:@"errorMessage"]];
+    
+    [self setFullWidth_:[self.proxy valueForKey:@"fullWidth"]];
     
     activeField.exclusiveTouch = YES;
-    
     return activeField;
 }
 
 #pragma mark Setters
+-(void)setHintColor_:(id)value {
+    TiColor *color = [TiUtils colorValue:value];
+    [activeField setHintColor:[color _color]];
+    
+}
+-(void)setColor_:(id)value {
+    TiColor *color = [TiUtils colorValue:value];
+    [activeField setTextColor:[color _color]];
+    
+}
+-(void)setBackgroundColor_:(id)value {
+    TiColor *color = [TiUtils colorValue:value];
+    [activeField setBackgroundColor:[color _color]];
+    self.backgroundColor = [color _color];
+}
+-(void)setErrorColor_:(id)value {
+    TiColor *color = [TiUtils colorValue:value];
+    [activeField setErrorColor:[color _color]];
+    
+}
 
--(void)setSuggestions_:(id)data {
+-(void)setData_:(id)data {
     ENSURE_ARRAY(data);
     
     [activeField setSuggestionsDictionary: data];
 }
 
 -(void)setFullWidth_:(id)full {
-    [activeField setFullWidth: [TiUtils boolValue:full /*def:NO*/]];
+    [activeField setFullWidth: [TiUtils boolValue:full def:NO]];
 }
 -(void)setHint_:(id)arg {
     [activeField setHint: [TiUtils stringValue:arg]];
@@ -136,20 +156,41 @@
 }
 -(void)setText_:(id)arg {
     //[self.proxy setValue:arg forKey:@"text"];
-    [activeField setText: [TiUtils stringValue:arg]];
+    if (arg != nil) {
+        [activeField setText: [TiUtils stringValue:arg]];
+    }
 }
 -(void)setEnabled_:(id)enabled {
-    [activeField setEnabled: [TiUtils boolValue:enabled /*def:YES*/]];
+    [activeField setEnabled: [TiUtils boolValue:enabled def:YES]];
 }
 -(void)setHasError_:(id)arg {
-    [activeField setHasError: [TiUtils boolValue:arg /*def:NO*/]];
+    [activeField setHasError: [TiUtils boolValue:arg def:NO]];
 }
--(void)setHasFocus_:(id)args {
+-(void)setFocus_:(id)args {
     [self doneTyping];
 }
-
--(id)getText_ {
-    NSLog(activeField.text);
+-(void)setBlur_:(id)args {
+    [self doneTyping];
+}
+-(void)setSingleLine_:(id)args {
+    [activeField setSingleLine: [TiUtils boolValue:args def:YES]];
+}
+-(void)setFloatingLabel_:(id)args {
+    [activeField setFloatingLabel: [TiUtils boolValue:args def:YES]];
+}
+-(void)setMaxCharacterCount_:(id)args {
+    [activeField setMaxCharacterCount: [TiUtils floatValue:args]];
+}
+-(void)setFont_:(id)args {
+    WebFont *f = [TiUtils fontValue:args];
+    [activeField setInputTextFont: [f font]];
+}
+-(void)setLabelFont_:(id)args {
+    WebFont *f = [TiUtils fontValue:args];
+    [activeField setLabelsFont: [f font]];
+}
+-(void)setErrorMessage_:(id)args {
+    [activeField setErrorMessage:[TiUtils stringValue:args]];
 }
 
 #pragma mark Event Listeners
@@ -217,7 +258,7 @@
 
 - (void)textFieldDidEndEditing:(MDTextField *)textField {
     //activeField = nil;
-    
+    [activeField resignFirstResponder];
 }
 
 - (void)doneTyping {
