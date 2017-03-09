@@ -7,6 +7,7 @@
 //
 
 #import "TiMaterialTextFieldProxy.h"
+#import "TiMaterialTextField.h"
 
 @implementation TiMaterialTextFieldProxy 
 
@@ -94,5 +95,65 @@
     // This method is called right after the view has detached from the proxy
 }
 
+
+
+-(NSString*)apiName
+{
+    return @"Ti.Material.TextField";
+}
+
+
+-(void)blur:(id)args
+{
+    ENSURE_UI_THREAD_1_ARG(args)
+    if ([self viewAttached])
+    {
+        TiUIView *md = (TiUIView*) [self view];
+        [md.subviews[0] resignFirstResponder];
+    }
+}
+
+-(void)focus:(id)args
+{
+    ENSURE_UI_THREAD_1_ARG(args)
+    if ([self viewAttached])
+    {
+        TiUIView *md = (TiUIView*) [self view];
+        [md.subviews[0] becomeFirstResponder];
+    }
+}
+
+-(BOOL)focused:(id)unused
+{
+    if (![NSThread isMainThread]) {
+        __block BOOL result=NO;
+        TiThreadPerformOnMainThread(^{
+            result = [self focused:nil];
+        }, YES);
+        return result;
+    }
+    BOOL result = NO;
+    if ([self viewAttached])
+    {
+        TiUIView *md = (TiUIView*) [self view];
+        result = [md.subviews[0] isFirstResponder];
+    }
+    
+    return result;
+}
+
+-(void)noteValueChange:(NSString *)newValue
+{
+    if (![[self valueForKey:@"value"] isEqual:newValue])
+    {
+        [self replaceValue:newValue forKey:@"value" notification:NO];
+        [self contentsWillChange];
+        [self fireEvent:@"change" withObject:[NSDictionary dictionaryWithObject:newValue forKey:@"value"]];
+        TiThreadPerformOnMainThread(^{
+            //Make sure the text widget is in view when editing.
+            [(TiMaterialTextField*)[self view] updateKeyboardStatus];
+        }, NO);
+    }
+}
 
 @end

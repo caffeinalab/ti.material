@@ -10,4 +10,7 @@
 
 @interface TiMaterialTextFieldProxy : TiViewProxy
 
+//Internal values
+-(void)noteValueChange:(NSString *)newValue;
+
 @end

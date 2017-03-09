@@ -15,4 +15,10 @@
         MDTextField *activeField;
 }
 
+
+-(void)setValue_:(id)text;
+
+#pragma mark - Titanium Internal Use Only
+-(void)updateKeyboardStatus;
+
 @end

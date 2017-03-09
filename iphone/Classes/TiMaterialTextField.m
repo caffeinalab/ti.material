@@ -9,6 +9,7 @@
 #import "MDTextField.h"
 #import "TiMaterialTextField.h"
 #import "TiMaterialTextFieldProxy.h"
+#import "TiApp.h"
 
 @interface TiMaterialTextField () <MDTextFieldDelegate>
 
@@ -88,7 +89,7 @@
     
     [self setHint_:[TiUtils stringValue:[self.proxy valueForKey:@"hint"]]];
     [self setLabel_:[TiUtils stringValue:[self.proxy valueForKey:@"label"]]];
-    [self setText_:[TiUtils stringValue:[self.proxy valueForKey:@"text"]]];
+    [self setValue_:[TiUtils stringValue:[self.proxy valueForKey:@"value"]]];
     
     [self setBackgroundColor_:[self.proxy valueForKey:@"backgroundColor"]];
     [self setColor_:[self.proxy valueForKey:@"color"]];
@@ -104,7 +105,7 @@
     
     [self setSingleLine_:[self.proxy valueForKey:@"singleLine"]];
     [self setFloatingLabel_:[self.proxy valueForKey:@"floatingLabel"]];
-    [self setMaxCharacterCount_:[self.proxy valueForKey:@"maxCharacterCount"]];
+    [self setMaxLength_:[self.proxy valueForKey:@"maxLength"]];
     
     [self setFont_:[self.proxy valueForKey:@"font"]];
     [self setLabelFont_:[self.proxy valueForKey:@"labelFont"]];
@@ -178,7 +179,7 @@
 -(void)setFloatingLabel_:(id)args {
     [activeField setFloatingLabel: [TiUtils boolValue:args def:YES]];
 }
--(void)setMaxCharacterCount_:(id)args {
+-(void)setMaxLength_:(id)args {
     [activeField setMaxCharacterCount: [TiUtils floatValue:args]];
 }
 -(void)setFont_:(id)args {
@@ -237,10 +238,7 @@
 }
 
 - (void)textFieldDidChange:(MDTextField *)textField {
-    NSDictionary *evt = @{
-                            @"value" : [TiUtils stringValue:textField.text]
-                            };
-    [self.proxy fireEvent:@"change" withObject:evt];
+    [(TiMaterialTextFieldProxy*)[self proxy] noteValueChange:textField.text];
 }
 
 - (void)dismissKeyboard {
@@ -265,5 +263,28 @@
     [activeField resignFirstResponder];
 }
 
+-(void)setValue_:(id)value
+{
+    NSString* string = [TiUtils stringValue:value];
+    if (string == nil)
+    {
+        return;
+    }
+    [activeField setText:string];
+    [(TiMaterialTextFieldProxy*)[self proxy] noteValueChange:string];
+}
+
+-(UIView<UITextInputTraits>*)activeField
+{
+    return nil;
+}
+
+#pragma mark - Titanium Internal Use Only
+-(void)updateKeyboardStatus
+{
+    if ( ([[[TiApp app] controller] keyboardVisible]) && ([[[TiApp app] controller] keyboardFocusedProxy] == [self proxy]) ) {
+        [[[TiApp app] controller] performSelector:@selector(handleNewKeyboardStatus) withObject:nil afterDelay:0.0];
+    }
+}
 
 @end
