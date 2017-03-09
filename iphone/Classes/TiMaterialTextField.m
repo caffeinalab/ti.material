@@ -70,11 +70,6 @@
 #pragma mark Main Object
 
 -(MDTextField*)textField:(id)args {
-    TiColor *bg = [TiUtils colorValue:[self.proxy valueForKey:@"backgroundColor"]];
-    TiColor *color = [TiUtils colorValue:[self.proxy valueForKey:@"color"]];
-    TiColor *hintColor = [TiUtils colorValue:[self.proxy valueForKey:@"hintColor"]];
-    TiColor *errorColor = [TiUtils colorValue:[self.proxy valueForKey:@"errorColor"]];
-    
     NSMutableArray *data = [self.proxy mutableArrayValueForKey:@"data"];
     
     if (!activeField) {
@@ -93,7 +88,7 @@
     
     [self setBackgroundColor_:[self.proxy valueForKey:@"backgroundColor"]];
     [self setColor_:[self.proxy valueForKey:@"color"]];
-    [self setHintColor_:[self.proxy valueForKey:@"hintColor"]];
+    [self setHintTextColor_:[self.proxy valueForKey:@"hintTextColor"]];
     [self setErrorColor_:[self.proxy valueForKey:@"errorColor"]];
     
     [self setEnabled_:[self.proxy valueForKey:@"enabled"]];
@@ -119,7 +114,7 @@
 }
 
 #pragma mark Setters
--(void)setHintColor_:(id)value {
+-(void)setHintTextColor_:(id)value {
     TiColor *color = [TiUtils colorValue:value];
     [activeField setHintColor:[color _color]];
     
@@ -192,6 +187,31 @@
 }
 -(void)setErrorMessage_:(id)args {
     [activeField setErrorMessage:[TiUtils stringValue:args]];
+}
+
+-(void)setReturnKeyType_:(id)value
+{
+    [activeField setReturnKeyType:[TiUtils intValue:value]];
+}
+
+-(void)setKeyboardType_:(id)value
+{
+    [activeField setKeyboardType:[TiUtils intValue:value]];
+}
+
+-(void)setAutoComplete_:(id)value
+{
+    [activeField setAutoComplete:[TiUtils boolValue:value]];
+}
+
+
+#pragma mark Responder methods
+//These used to be blur/focus, but that's moved to the proxy only.
+//The reason for that is so checking the toolbar can use UIResponder methods.
+
+-(void)setPasswordMask_:(id)value
+{
+    [activeField setSecureTextEntry:[TiUtils boolValue:value]];
 }
 
 #pragma mark Event Listeners

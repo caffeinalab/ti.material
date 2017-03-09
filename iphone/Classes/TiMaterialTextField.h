@@ -11,6 +11,8 @@
 #import "MDTextField.h"
 
 @interface TiMaterialTextField : TiUIView {
+    @protected
+        TiUIView<TiScrolling> *	parentScrollView;
     @private
         MDTextField *activeField;
 }
